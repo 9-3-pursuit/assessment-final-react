@@ -100,7 +100,7 @@ You will need to complete features for four different pages and create a navigat
 
   ![Pre Search](./assets/search1.png)
 
-- [ ] After typing a name into the text field and pressing submit, the relevant character's name, age, and gender should be shown on the page. Submitting the form should also clear the text field.
+- [ ] After typing a name into the text field and pressing submit, the relevant character's name, age, and eye color should be shown on the page. Submitting the form should also clear the text field.
 
   ![Successful Search](./assets/search2.png)
 
