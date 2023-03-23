@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 function Movies() {
   const [allMovies, setAllMovies] = useState([]);
   const [error, setError] = useState("");
-
+  const [selectMovie, setSelectMovie] = useState("")
   useEffect(() => {
     getAllMovies()
       .then((data) => {
