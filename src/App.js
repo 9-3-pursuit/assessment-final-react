@@ -11,21 +11,23 @@ const base_URL = "https://resource-ghibli-api-pursuit.onrender.com/"
 
 
 function App() {
+ const [movies, setMovies] = useState([])
+ 
 
   function fetchAPI(){
     fetch(base_URL + "films")
         .then((res) => res.json())
         .then((res) => {
-            console.log("works!")
+         setMovies(res)
         }).catch(error => {
             'error'
         })
   }
 
   useEffect(() => {
-    fetchAPI()
-  
+    fetchAPI() 
 }, []) // characterId
+
 
   return (
     <div className="app">
@@ -33,7 +35,7 @@ function App() {
       <NavBar/>
       <Routes>
       <Route path="/" element={<Home/>}/>
-      <Route path="/movies" element={<Movies/>}/>
+      <Route path="/movies" element={<Movies movies={movies}/>}/>
       <Route path="/people" element={<People/>}/>
       <Route path="/locations" element={ <Locations/>}/>
       </Routes>
