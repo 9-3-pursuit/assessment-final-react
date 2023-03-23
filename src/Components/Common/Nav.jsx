@@ -1,5 +1,4 @@
 import "./Nav.css"
-
 import { Link } from "react-router-dom";
 
 export default function Nav() {
@@ -10,7 +9,7 @@ export default function Nav() {
             <nav>
                 <article>
                     <a href="http://localhost:3000/">
-                        <img src="/Logo.png" />
+                        <img src="/Logo.png" alt="logo" />
                     </a>
                 </article>
                 <ul>

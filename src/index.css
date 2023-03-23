@@ -129,3 +129,7 @@ ul li::marker {
   color: #517e94;
   opacity: 0;
 }
+
+.home {
+  text-align: center;
+}
