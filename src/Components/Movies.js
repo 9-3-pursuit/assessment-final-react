@@ -1,5 +1,5 @@
 // "select a movie" with drop down select
-// select options populated by api fetch call (assesment prep for reference)
+// select options populated by api fetch call result mapping (assesment prep for ref)
 // use useEffect to rerender only when selection changes
 // figure out why fetch call won't work (console log/postman)
 // upon select api data for title, release date & description should be displayed
@@ -10,7 +10,7 @@ export default function Movies() {
   const [movies, setMovies] = useState([]);
   // our data will return an array
   const [selectedMovie, setSelectedMovie] = useState(null);
-  const URL = `https://resource-ghibli-api.onrender.com/films`;
+  const URL = `https://resource-ghibli-api-pursuit.onrender.com/films`;
 
   useEffect(() => {
     fetch(URL)
@@ -21,8 +21,8 @@ export default function Movies() {
     setSelectedMovie(movies.find((movie) => movie.id === event.target.value));
   }
   return (
-    <div className=".movies">
-      <h2>Select a Movie</h2>
+    <div className="movies">
+      <h2> Select a Movie </h2>
       <select
         style={{ textAlignVertical: "center", textAlign: "center" }}
         onChange={handleSelectChange}
@@ -35,7 +35,8 @@ export default function Movies() {
           </option>
         ))}
       </select>
-
+      {/* // has a movie NOT been selected ? if so return nothing. if not return our
+      info */}
       {!selectedMovie ? null : (
         <div style={{ textAlignVertical: "center", textAlign: "center" }}>
           <h1>Title: {selectedMovie.title} </h1>
