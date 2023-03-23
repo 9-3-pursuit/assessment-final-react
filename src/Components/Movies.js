@@ -11,11 +11,16 @@ function Movies() {
     });
   }, []);
 
-
+  function handleSelectChange(){
+    console.log("hi")
+  }
   return(
     <div className="movies">
         <h1>Select a Movie</h1>
+        <select onChange={handleSelectChange}>
+        <option name="" value = "">---Please choose an option---</option>
         
+        </select>
     </div>
   )
 }
