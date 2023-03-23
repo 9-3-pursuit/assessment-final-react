@@ -11,17 +11,21 @@ function Movies() {
     });
   }, []);
 
-  function handleSelectChange(){
-    console.log("hi")
+  function handleSelectChange() {
+    console.log("hi");
   }
-  return(
+  return (
     <div className="movies">
-        <h1>Select a Movie</h1>
-        <select onChange={handleSelectChange}>
-        <option name="" value = "">---Please choose an option---</option>
-        
-        </select>
+      <h1>Select a Movie</h1>
+      <select name="movies" id="movies" onChange={handleSelectChange}>
+        <option value="">---Please choose an option---</option>
+        {allMovies.map((movie) => {
+          <option key={movie.id} value={movie.title}>
+            {movie.title}
+          </option>;
+        })}
+      </select>
     </div>
-  )
+  );
 }
 export default Movies;
