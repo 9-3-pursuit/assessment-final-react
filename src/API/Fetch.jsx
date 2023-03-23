@@ -1,4 +1,4 @@
-const URL = 'https://resource-ghibli-api.onrender.com'
+const URL = 'https://resource-ghibli-api-pursuit.onrender.com'
 
 
 export const getMovies = () => {
