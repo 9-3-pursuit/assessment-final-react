@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 
 function Movies() {
   const [allMovies, setAllMovies] = useState([]);
-
+  const [error, setError] = useState("")
+  
   useEffect(() => {
     getAllMovies().then((data) => {
       setAllMovies(data);
