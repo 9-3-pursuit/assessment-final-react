@@ -1,7 +1,8 @@
-const URL = 'https://resource-ghibli-api-pursuit.onrender.com'
+const URL = 'https://resource-ghibli-api.onrender.com'
+
 
 export const getMovies = () => {
-    return fetch(`${URL}/movies`)
+    return fetch(`${URL}/films`)
     .then(response => response.json())
 }
 
