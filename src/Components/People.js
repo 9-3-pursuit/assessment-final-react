@@ -1,56 +1,51 @@
- import { useState } from "react";
- export default function People () {
-    console.log("test")
-   
-// const URL = "https://rickandmortyapi.com/api/character/?name=";
-const [userSearch, setUserSearch] = useState("");
-  const [character, setCharacter] = useState({}); // would keep track of the displayed character
-  const [error, setError] = useState(false);
-  function handleSubmit(event) {
+import React, { useState } from "react";
+
+export default function People() {
+  console.log("test");
+
+  const [search, setSearch] = useState(""); // search for person
+  const [person, setPerson] = useState([]); // selected person via user
+  const [found, setFound] = useState(false); // state for no results found, search error
+
+  function handlePersonSubmit(event) {
     event.preventDefault();
-    fetch(`https://rickandmortyapi.com/api/character/?name=${userSearch}`)
+    fetch(` https://resource-ghibli-api-pursuit.onrender.com/people`)
       .then((response) => response.json())
       .then((response) => {
-        // console.log(response)
-        setError(false) // if error isn't there
-        setCharacter(response.results[0]);
-        setUserSearch(""); //resets search input back blank when searcgh is submitted
+        console.log(response);
+        setFound(false);
+        setPerson(response.results);
       })
       .catch((error) => {
-        // console.log("");
-        setError(true) // if error is there via api call
+        // console.log(error)
+        setFound(true);
       });
+
+    // selectedPerson();
+    // setSearch("");
   }
+
   return (
-    <div className="search-engine">
-      <h2> Search for Character Name: </h2>
-      <form onSubmit={handleSubmit}>
+    <div className="people">
+      <h2> Search for a Person </h2>
+      <form onSubmit={handlePersonSubmit}>
         <input
           type="text"
           id="search"
-          value={userSearch}
-          onChange={(event) => setUserSearch(event.target.value)}
-      
+          value={search}
+          onChange={(event) => setSearch(event.target.value)}
+          placeholder="Search...🎥"
         />
-        <button type="submit">Search</button>
+        <button>Submit</button>
       </form>
-      {/* adding the double ! makes it a boolean equaling zero, 
-      if it has a length then it will return the info 
-      BUT if there is no length then it returns false;
-      if no error it will return the the character picked --v */}
-      {(!!Object.keys(character).length && !error) && (
+      {!!Object.keys(person).length && !found && (
         <section>
-          <h3>Name: {character.name}</h3>
-          <p>Species: {character.species}</p>
-          <p>Location: {character.location.name}</p>
-          <img src={character.image} alt="character-img"></img>
+          <h3>Name: {found.name}</h3>
+          <p>Age: {found.age}</p>
+          <p>Eye Color: {found.eye_color}</p>
         </section>
       )}
-      {/* if error is found --v */}
-      {error && <h2>Not Found!</h2>}
+      {found && <h2>Not Found</h2>}
     </div>
   );
 }
-
-
- 
