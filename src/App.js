@@ -7,9 +7,12 @@ import Movies from './Components/Movies.js';
 import People from './Components/People.js';
 import Locations from './Components/Locations.js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+const API_URL = "https://resource-ghibli-api-pursuit.onrender.com/films";
+ 
+console.log(API_URL)
 
 function App() {
+
 
 
   return (
