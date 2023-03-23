@@ -7,8 +7,26 @@ import Locations from "./components/Locations";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from 'react';
 
+const base_URL = "https://resource-ghibli-api-pursuit.onrender.com/"
+
 
 function App() {
+
+  function fetchAPI(){
+    fetch(base_URL + "films")
+        .then((res) => res.json())
+        .then((res) => {
+            console.log("works!")
+        }).catch(error => {
+            'error'
+        })
+  }
+
+  useEffect(() => {
+    fetchAPI()
+  
+}, []) // characterId
+
   return (
     <div className="app">
       <Router>

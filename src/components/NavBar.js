@@ -4,14 +4,14 @@ import logo from "./images/png-transparent-ghibli-museum-dog-studio-ghibli-logo-
 const NavBar = () => {
     return (
         <div href="navBar">
-            <img src={logo} alt="logo" />
+            {/* <img src={logo} alt="logo" /> */}
             <nav>
                 <ul>
                     <li>
                         <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="/movies">Moves</a>
+                        <a href="/movies">Movies</a>
                     </li>
                     <li>
                         <a href="/people">People</a>

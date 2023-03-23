@@ -1,7 +1,19 @@
 .navBar {
     background-color: rgb(223, 70, 195);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
  img {
     height: 100px;
 }
+
+ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+li {
+    list-style: none;
+    
+}
+
