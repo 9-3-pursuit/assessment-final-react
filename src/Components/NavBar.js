@@ -6,6 +6,7 @@ const NavBar = () => {
         <img src="" alt="Ghibli Logo" />
       </Link>
       <Link to = "/movies">Movies</Link>
+      <Link to = "/people">People</Link>
       
     </nav>
   );
