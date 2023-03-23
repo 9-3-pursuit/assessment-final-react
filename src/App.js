@@ -1,8 +1,20 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Nav from "./Nav/Nav";
+import Home from "./Pages/Home/Home";
+import Locations from "./Pages/Locations/Locations";
+import People from "./Pages/People/People";
+
 function App() {
   return (
-    <div className="app">
-      <h1>Welcome to GhibliApp</h1>
-    </div>
+    <BrowserRouter>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movies" element={<Locations />} />
+        <Route path="/people" element={<People />} />
+        <Route path="/locations" element={<Locations />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
