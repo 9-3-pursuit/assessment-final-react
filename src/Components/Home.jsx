@@ -2,7 +2,7 @@ export default function Home() {
     return (
         <div className="Home">
             <body>
-                <h1>Welcome to Ghibli App</h1>
+                <h1>Welcome to GhibliApp</h1>
             </body>
         </div>
     );

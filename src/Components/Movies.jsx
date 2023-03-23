@@ -4,9 +4,9 @@ import ShowSelectedMovie from "./ShowSelectedMovie";
 export default function Movies() {
     const [movies, setMovies] = useState([]);
     const [selectedMovie, setSelectedMovie] = useState(null);
-
+    const BASE_URL = "https://resource-ghibli-api-pursuit.onrender.com/films";
     useEffect(() => {
-        fetch("https://resource-ghibli-api-pursuit.onrender.com/films") 
+        fetch(BASE_URL) 
             .then((res) => res.json())
             .then((movies) => setMovies(movies));
     }, []);
