@@ -50,3 +50,8 @@ header ul li a:hover {
     color: var(--dark);
     border-bottom: 2px solid var(--dark);
 }
+
+header img {
+    padding: 2%;
+    margin: 1.5%
+}

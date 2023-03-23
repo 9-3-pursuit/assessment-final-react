@@ -1,18 +1,18 @@
 import "./Nav.css"
+
 import { Link } from "react-router-dom";
 
 export default function Nav() {
 
     return (
         <header>
-            <article>
-                <h1>
-                    <Link to="/">
-                        Home
-                    </Link>
-                </h1>
-            </article>
+
             <nav>
+                <article>
+                    <a href="http://localhost:3000/">
+                        <img src="/Logo.png" />
+                    </a>
+                </article>
                 <ul>
                     <li>
                         <Link to="/movies">Movies</Link>
