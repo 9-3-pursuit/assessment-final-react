@@ -16,9 +16,9 @@ function App() {
       <Nav/>
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/' element={<MoviesPage/>}/>
-          <Route path='/' element={<PeoplePage/>}/>
-          <Route path='/' element={<Locations/>}/>
+          <Route path='/movies' element={<MoviesPage/>}/>
+          <Route path='/people' element={<PeoplePage/>}/>
+          <Route path='/locations' element={<Locations/>}/>
 
 
       </Routes>
