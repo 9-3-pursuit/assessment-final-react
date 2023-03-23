@@ -1,51 +1,59 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
+import Person from "../Components/Person";
 
 export default function People() {
-  console.log("test");
+  //   console.log("test");
 
   const [search, setSearch] = useState(""); // search for person
-  const [person, setPerson] = useState([]); // selected person via user
-  const [found, setFound] = useState(false); // state for no results found, search error
+  const [person, setPerson] = useState(""); // selected person via user
+  const [people, setPpl] = useState([]); // state for no results found, search error
 
-  function handlePersonSubmit(event) {
-    event.preventDefault();
+  //  fetches all people
+  useEffect(() => {
     fetch(` https://resource-ghibli-api-pursuit.onrender.com/people`)
       .then((response) => response.json())
-      .then((response) => {
-        console.log(response);
-        setFound(false);
-        setPerson(response.results);
+      .then((people) => {
+        // console.log(people);
+        setPpl([...people]);
       })
       .catch((error) => {
-        // console.log(error)
-        setFound(true);
+        console.log(error);
       });
+  }, []);
 
-    // selectedPerson();
-    // setSearch("");
+  //  fetches selected person
+  function onePerson() {
+    let soloPersonArr = people.filter((person) => {
+      console.log(soloPersonArr)
+        return person.name.toLowerCase() === search.toLowerCase();
+     
+    });
+  } 
+ 
+  function handlePersonChange(event) {
+    event.preventDefault();
+    setSearch(event.target.value);
+  }
+  function handlePersonSubmit(event) {
+    event.preventDefault();
+    setPerson(onePerson);
   }
 
   return (
     <div className="people">
       <h2> Search for a Person🤔 </h2>
-      <form onSubmit={handlePersonSubmit}>
+      <form>
         <input
           type="text"
           id="search"
           value={search}
-          onChange={(event) => setSearch(event.target.value)}
+          onChange={handlePersonChange}
           placeholder="Search...🎥"
         />
-        <button>Submit</button>
+        <button onClick={(event)=>handlePersonSubmit(event)}>Submit</button>
       </form>
-      {!!Object.keys(person).length && !found && (
-        <section>
-          <h3>Name: {found.name}</h3>
-          <p>Age: {found.age}</p>
-          <p>Eye Color: {found.eye_color}</p>
-        </section>
-      )}
-      {found && <h2>Not Found</h2>}
+      {person ? <Person soloPersonArr={soloPersonArr}/> : null}
+      
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export default function Locations() {
-  console.log("test");
+//   console.log("test");
 
   const [click, setClick] = useState(false);
   const [locations, setLocations] = useState([]);
@@ -14,7 +14,7 @@ export default function Locations() {
       .then((response) => response.json())
       .then((response) => {
         setLocations(response);
-        console.log(response);
+        // console.log(response);
       })
       .catch((error) => {
         console.log(error);
@@ -66,7 +66,7 @@ export default function Locations() {
     <div className="locations">
       <h1>List of Locations🗺️</h1>
       <button onClick={handleBtnClick}>
-        {click ? "Hide Locations" : "Show Locations"}
+        {click ? "Hide Locations😶‍🌫️" : "Show Locations🤗"}
       </button>
       <button onClick={handleSortForName}> Sort by Name </button>
       <button onClick={handleSortForClimate}> Sort by Climate </button>
@@ -78,13 +78,13 @@ export default function Locations() {
             <li key={place.id}>
               <ul>
                 <li>
-                  <span><strong>Name:</strong></span>{place.name}
+                  <span><strong>Name: </strong></span>{place.name}
                 </li>
                 <li>
-                  <span><strong>Climate:</strong></span>{place.climate}
+                  <span><strong>Climate: </strong></span>{place.climate}
                 </li>
                 <li>
-                  <span><strong>Terrain:</strong></span>{place.terrain}
+                  <span><strong>Terrain: </strong></span>{place.terrain}
                 </li>
               </ul>
             </li>

@@ -16,12 +16,12 @@ export default function Movies({ movies }) {
       <h1>Select A Movie🍿</h1>
       <select name="Movies" id="movie-select" onChange={handleMovieChange}>
         <option value=""></option>
-        {/* {movies.map((movie) => (
+        {movies.map((movie) => (
           <option key={movie.title} value={movie.title}>
             {movie.title}
           </option>
-        ))} */}
-        {/* {filterToTitle.map((movie) => (
+        ))}
+        {filterToTitle.map((movie) => (
           <aside key={movie.id}>
             <h4>
               <strong>Title: </strong> {movie.title}
@@ -33,7 +33,7 @@ export default function Movies({ movies }) {
               <strong>Description: </strong> {movie.description}
             </p>
           </aside>
-        ))} */}
+        ))}
       </select>
     </div>
   );
