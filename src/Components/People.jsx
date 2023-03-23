@@ -1,19 +1,9 @@
-import { useState, useEffect } from "react";
-import { getPeople } from "./api/fetch";
+import { useState } from "react";
 
-export default function People () {
-    const [people, setPeople] = useState([]);
+export default function People ({ people }) {
     const [search, setSearch] = useState("");
     const [person, setPerson] = useState("");
     const [error, setError] = useState("");
-
-    useEffect(() => {
-        getPeople()
-        .then((data) => {
-            setPeople(data);
-        })
-        .catch((error) => console.log(error));
-    }, [])
 
     function handleSubmit (event) {
         event.preventDefault()

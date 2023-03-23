@@ -1,26 +1,4 @@
-import { useState, useEffect } from "react";
-import { getLocation } from "./api/fetch";
-
-export default function Locations () {
-    const [locations, setLocations] = useState();
-    const [showLocations, setShowLocations] = useState(false)
-
-    useEffect(() => {
-        getLocation()
-        .then((data) => {
-            setLocations(data);
-        })
-        .catch((error) => console.log(error));
-    }, [] )
-
-    function toggleShowLocation () {
-        setShowLocations(!showLocations)
-    }
-
-    function sortBy (sorter) {
-        setLocations([...locations].sort((a, b) => a[sorter].localeCompare(b[sorter])))
-    }
-
+export default function Locations ({locations, showLocations, sortBy, toggleShowLocation }) {
     return (
         <main className="locations">
             <h2>List of Locations</h2>

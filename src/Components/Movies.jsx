@@ -1,27 +1,10 @@
-import { useState, useEffect } from "react";
-import { getMovies } from "./api/fetch";
-
-export default function Movies () {
-    const  [movies, setMovies] = useState([]);
-    const [selected, setSelected] = useState("");
-
-    useEffect(() => {
-        getMovies()
-        .then((data) => {
-            setMovies(data);
-        })
-        .catch((error) => console.log(error));
-    }, [] )
-
-    function handleChange (event) {
-        setSelected(movies.find((movie) => movie.id === event.target.value));
-    }
+export default function Movies ({movies, selected, handleSelectChange}) {
 
     return (
         <main className="movies">
             <h2>Select a Movies</h2>
             <section>
-                <select onChange={handleChange}>
+                <select onChange={handleSelectChange}>
                     <option value="">Please select an option</option>
                     {movies ? movies.map((movie, index) => {
                         return(
