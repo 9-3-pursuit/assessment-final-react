@@ -39,6 +39,7 @@ li {
   background: ghostwhite;
   padding: 1em;
   min-height: 80vh;
+  text-align: center;
 }
 
 .locations>ul {
@@ -87,6 +88,11 @@ li {
   background: lemonchiffon;
   height: 80vh;
   padding-top: 1em;
+  text-align: center;
+}
+
+.people button {
+  margin: 1%;
 }
 
 .people aside {
@@ -98,6 +104,10 @@ li {
 
 .people aside h3 {
   padding-top: 1em;
+}
+
+.people section {
+  margin: 5%;
 }
 
 .people span,
