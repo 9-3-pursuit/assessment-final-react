@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Nav from './Components/Nav'
+import Nav from './Commons/Nav'
 import Home from "./Components/Home";
 import MoviesPage from "./Components/MoviesPage";
 import PeoplePage from "./Components/PeoplePage";
@@ -19,8 +19,6 @@ function App() {
           <Route path='/movies' element={<MoviesPage/>}/>
           <Route path='/people' element={<PeoplePage/>}/>
           <Route path='/locations' element={<Locations/>}/>
-
-
       </Routes>
     </div>
     
