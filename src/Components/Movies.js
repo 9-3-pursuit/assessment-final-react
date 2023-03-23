@@ -3,16 +3,20 @@ import { useState, useEffect } from "react";
 
 function Movies() {
   const [allMovies, setAllMovies] = useState([]);
-  const [error, setError] = useState("")
-  
+  const [error, setError] = useState("");
+
   useEffect(() => {
-    getAllMovies().then((data) => {
-      setAllMovies(data);
-      console.log(data);
-    });
+    getAllMovies()
+      .then((data) => {
+        setAllMovies(data);
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
-  function handleSelectChange() {
+  function handleSelectChange(event) {
     console.log("hi");
   }
   return (
