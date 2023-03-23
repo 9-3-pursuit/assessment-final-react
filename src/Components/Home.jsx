@@ -1,7 +1,9 @@
 export default function Home() {
     return (
         <div className="Home">
-            <h1>Welcome to Gihbli App</h1>
+            <body>
+                <h1>Welcome to Ghibli App</h1>
+            </body>
         </div>
-    )
+    );
 }
