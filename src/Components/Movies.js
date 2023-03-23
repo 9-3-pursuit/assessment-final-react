@@ -10,5 +10,13 @@ function Movies() {
       console.log(data);
     });
   }, []);
+
+
+  return(
+    <div className="movies">
+        <h1>Select a Movie</h1>
+        
+    </div>
+  )
 }
 export default Movies;
