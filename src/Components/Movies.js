@@ -13,7 +13,7 @@ export default function Movies({ movies }) {
 
   return (
     <div className="movies">
-      <h1>Select A Movie</h1>
+      <h1>Select A Movie🍿</h1>
       <select name="Movies" id="movie-select" onChange={handleMovieChange}>
         <option value=""></option>
         {/* {movies.map((movie) => (

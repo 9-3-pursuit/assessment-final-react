@@ -27,7 +27,7 @@ export default function People() {
 
   return (
     <div className="people">
-      <h2> Search for a Person </h2>
+      <h2> Search for a Person🤔 </h2>
       <form onSubmit={handlePersonSubmit}>
         <input
           type="text"
