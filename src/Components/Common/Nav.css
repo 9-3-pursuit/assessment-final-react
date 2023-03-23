@@ -51,7 +51,7 @@ header ul li a:hover {
     border-bottom: 2px solid var(--dark);
 }
 
-header img {
-    padding: 2%;
-    margin: 1.5%
+img {
+    padding: 5%;
+    margin: 5%
 }
