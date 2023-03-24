@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useStudioGhibliAPI from "../../Helpers/useStudioGhibliAPI";
+import useStudioGhibliAPI from "../../Hooks/useStudioGhibliAPI";
 
 export default function Movies() {
   const movies = useStudioGhibliAPI("films");
