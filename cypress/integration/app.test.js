@@ -107,7 +107,7 @@ describe("Has a functioning Movies page that populates a description when a movi
 });
 
 describe("Has a functioning People page", () => {
-  before(() => {
+  before(() => { 
     intercept();
     cy.visit(`${baseURL}/people`);
     cy.wait("@request");
@@ -210,23 +210,23 @@ describe("Has 3 buttons that allow sorting by location Name, Climate or Terrain"
       cy.get(".locations ul ul")
         .eq(index)
         .within(() => {
-          cy.get("span").eq(1).should("have.text", locations[index].name);
+          cy.get("span").eq(0).should("have.text", locations[index].name);
         });
     });
   });
 
   it("sorts by location climate, when `Sort by Climate` button is pressed", () => {
     locations.sort((a, b) => {
-      if (a.climate > b.climate) {
+      if (a.name > b.name) {
         return 1;
-      } else if (a.climate < b.climate) {
+      } else if (a.name < b.name) {
         return -1;
       } else {
         return 0;
       }
     });
 
-    cy.contains("Sort by Climate").click();
+    cy.contains("Sort by Name").click();
     locations.forEach((location, index) => {
       cy.get(".locations ul ul")
         .eq(index)
@@ -235,7 +235,7 @@ describe("Has 3 buttons that allow sorting by location Name, Climate or Terrain"
             .eq(1)
             .within(() => {
               cy.get("span")
-                .eq(1)
+                .eq(0)
                 .should("have.text", locations[index].climate);
             });
         });
