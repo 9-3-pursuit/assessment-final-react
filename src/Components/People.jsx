@@ -1,12 +1,18 @@
-import { useState } from "react"
+import { useState,useEffect } from "react"
 
 export default function People() {
 
   const [person, setPerson] = useState([])
   const [selectedPerson, setSelectedPerson] = useState("");
- 
- const [toggle,setToggle] = useState(false)
+  const [cyp, setCyp] = useState([]);
 
+  const [toggle,setToggle] = useState(false)
+
+  useEffect(() => {
+    fetch("https://resource-ghibli-api-pursuit.onrender.com/films")
+      .then((res) => res.json())
+      .then((response) => setCyp(response));
+  }, []);
 
     
   function handleTextChange(event) {
@@ -49,7 +55,9 @@ export default function People() {
           <p><span>Name:</span> {person[0].name}</p>
           <p><span>Age:</span> {person[0].age}</p> 
           <p><span>Gender:</span> {person[0].gender}</p>
-          </>) : ("Not found")
+          <p><span>Eye Color:</span> {person[0].eye_color}</p>
+          <p><span>Hair Color:</span> {person[0].hair_color}</p>
+          </>) : ("Not Found")
           )}
         </article>
        
