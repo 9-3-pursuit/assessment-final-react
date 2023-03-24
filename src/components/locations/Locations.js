@@ -38,29 +38,6 @@ export default function Locations() {
         {showLocations ? "Hide Locations" : "Show Locations"}
       </button>
       {showLocations && (
-        <ul className="location-list">
-          {sortedLocations.map((location) => (
-            <li key={location.id}>
-              <ul>
-                <li>
-                  <span>Locations:</span>
-                  <span>{location.name}</span>
-                </li>
-                <li>
-                  <span>Climate:</span>
-                  <span>{location.climate}</span>
-                </li>
-
-                <li>
-                  <span>Terrain:</span>
-                  <span>{location.terrain}</span>
-                </li>
-              </ul>
-            </li>
-          ))}
-        </ul>
-      )}
-      {showLocations && (
         <div className="sort-buttons">
           <button
             onClick={() => {
@@ -90,6 +67,30 @@ export default function Locations() {
             Sort by Terrain
           </button>
         </div>
+      )}
+      {showLocations && (
+        <ul className="location-list list-unstyled" style={{ listStyleType: "none" }}>
+
+          {sortedLocations.map((location) => (
+            <li key={location.id}>
+              <ul className="list-unstyled">
+                <li>
+                  <span>Name:</span>
+                  <span>{location.name}</span>
+                </li>
+                <li>
+                  <span>Climate:</span>
+                  <span>{location.climate}</span>
+                </li>
+
+                <li>
+                  <span>Terrain:</span>
+                  <span>{location.terrain}</span>
+                </li>
+              </ul>
+            </li>
+          ))}
+        </ul>
       )}
     </div>
   );
