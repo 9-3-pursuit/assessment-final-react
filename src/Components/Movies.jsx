@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import ShowSelectedMovie from "./ShowSelectedMovie";
-//import "./Movies.css"
+import "./Movies.css"
 
 export default function Movies() {
     const [movies, setMovies] = useState([]);
@@ -18,7 +18,7 @@ export default function Movies() {
         console.log(selectedMovie);
     }
 
-    return(
+    return (
         <div className="movies">
             <h1>Select a Movie</h1>
 

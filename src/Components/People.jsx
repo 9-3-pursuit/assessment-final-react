@@ -27,7 +27,7 @@ export default function People() {
                 <input
                     type="text"
                     value={selectedPerson}
-                    placeholder="Search for a person"
+                    placeholder="Search for a Person"
                     onChange={handleTextChange}
                     id="name"
                 /> 
@@ -40,7 +40,7 @@ export default function People() {
                     <p><span>Age:</span> {person[0].age}</p> 
                     <p><span>Gender:</span> {person[0].gender}</p>
                 </div>
-                ) : ("Not found!")
+                ) : ("Not Found")
                 )}
             </article> 
         </div>

@@ -1,0 +1,22 @@
+.people {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lavender;
+    border: 2px solid #588ada;
+    border-radius: 20px 10px 20px 10px;
+    padding: 5px;
+    color: #3a70c6;
+}
+
+h1, h3 {
+    color: #3a70c6;
+}
+
+p {
+    color: aquamarine;
+}
+
+button:hover {
+        background-color: aqua;
+}

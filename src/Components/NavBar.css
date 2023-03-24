@@ -1,0 +1,30 @@
+nav {
+    height:80px;
+    background-color: #588ada;
+    display: flex;
+    justify-content: space-between; 
+    border: 2px solid aquamarine;
+    border-radius: 20px; 
+}
+  
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  gap: 220px;
+}
+
+nav logo {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+nav a {
+  color: aqua;
+}
+
+.logoHaku :hover{
+  transform: scale(1.7);
+  padding-top: 15px;
+  padding-left: 10px;
+  }

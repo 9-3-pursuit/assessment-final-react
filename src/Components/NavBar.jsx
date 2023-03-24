@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import logo from "./Haku:Dragon.jpeg";
-// import "./Nav.css";
+import "./Nav.css";
 
 export default function NavBar() {
     return (
         <nav>
-            <article>
+            <article className="logoHaku">
                 <Link to="/"><img src={logo} alt="logo"></img></Link>
             </article>
             <aside>

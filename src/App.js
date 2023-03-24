@@ -4,7 +4,7 @@ import NavBar from "./Components/NavBar";
 import Movies from "./Components/Movies";
 import People from "./Components/People";
 import Locations from "./Components/Locations";
-
+import "./App.css"
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/" element={<People />} />
           <Route path="/" element={<Movies />} />
-          {/* <Route path="/" element={<Locations />} /> */}
+          <Route path="/" element={<Locations />} />
         </Routes>
 
       </Router>

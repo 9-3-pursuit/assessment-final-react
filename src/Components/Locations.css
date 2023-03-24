@@ -1,0 +1,61 @@
+.locations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(19, 179, 238);
+    border: 2px solid #588ada;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.locations li {
+    list-style: none;
+}
+
+.allLocations {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    gap: 30px;
+}
+
+.innerList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+}
+
+.innerList li {
+    background-color: white;
+    color: rebeccapurple;
+    padding: 3px 25px 3px 25px;
+}
+
+
+.innerList .list {
+    background-color: rgb(143, 223, 245);
+    width: 180px;
+    height: 20px;  
+}
+
+button:hover {
+    background-color: aqua;
+}
+
+.locations h4 {
+    margin: 5px;
+ }
+ 
+ .locationButton {
+     margin: 5px;
+     border-radius: 5px;
+ }
+ 
+ .locationButton :hover {
+     cursor: pointer;
+     transform: scale(1.1);    
+ }
+ 
+ .sortBy {
+    margin-left: 220px;
+ }
