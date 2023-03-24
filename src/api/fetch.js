@@ -7,3 +7,7 @@ export function getAllMovies() {
 export function getAllPeople() {
   return fetch(`${BASE_URL}/people`).then((response) => response.json());
 }
+
+export function getAllLocations() {
+  return fetch(`${BASE_URL}/locations`).then((response) => response.json());
+}
