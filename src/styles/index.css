@@ -1,4 +1,8 @@
-nav {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+nav ul {
   display: flex;
   justify-content: space-around;
   background: #517e94;
@@ -18,7 +22,7 @@ nav img {
 }
 
 main {
-  margin-top: 1em;
+  /* margin-top: 1em; */
   text-align: center;
 }
 
