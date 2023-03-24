@@ -101,9 +101,9 @@ const Locations = () => {
                         locations.map((location) => {
                            return  <li key={location.id}>
                                 <ul>
-                                    <li><span><span>{location.name}</span></span></li>
-                                    <li><span><span>{location.climate}</span></span></li>
-                                    <li><span><span>{location.terrain}</span></span></li>
+                                    <li><span>Name: <span>{location.name}</span></span></li>
+                                    <li><span>Climate: <span>{location.climate}</span></span></li>
+                                    <li><span>Terrain: <span>{location.terrain}</span></span></li>
                                 </ul>                           
                         </li>
                     })
