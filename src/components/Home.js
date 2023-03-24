@@ -1,10 +1,9 @@
 const Home = () => {
     return (
-       <div>
+       <main>
             <h1>Welcome to GhibliApp</h1> 
-       </div>
+       </main>
 )
 }
-
 export default Home
 

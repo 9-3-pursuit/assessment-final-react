@@ -1,16 +1,22 @@
-const People = ({ person, searchInput, onSearch, handleSubmit }) => {
-
-    
+const People = ({ person, searchInput, onSearch, handleSubmit, error }) => {
 
     return (
-        <div className="people">
+        <main className="people">
              <h1>Search for a Person</h1>
              <form onSubmit={handleSubmit}>
                 <input type="text" value={searchInput} onChange={onSearch} />
                 <button type="submit">Submit</button>
              </form>
-
-        </div>
+             { person.name ? (
+                <aside>
+                <section>
+                <h3>Name: {person.name}</h3>
+                <p>Age: {person.age}</p>
+                <p>Hair Color: {person.hair_color}</p>
+                </section>    
+                </aside>
+             ): error }
+        </main>
     )
 }
 

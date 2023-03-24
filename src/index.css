@@ -33,6 +33,7 @@ h2 {
 
 li {
   font-size: 1em;
+  list-style: none;
 }
 
 .locations {

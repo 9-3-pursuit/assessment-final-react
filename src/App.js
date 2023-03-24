@@ -5,34 +5,39 @@ import Movies from "./components/Movies";
 import People from "./components/People";
 import Locations from "./components/Locations";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useEffect, useState } from "react";
-//import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from "react";
 
 
 const base_URL = "https://resource-ghibli-api-pursuit.onrender.com/"
 
 function App() {
   const [url_edpoint, set_url_endpoint] = useState("");
-  const [locations, setLocations] = useState([])
-  const [searchInput, setSearchInput] = useState("")
-  const [people, setPeople] = useState([])
-  const [person, setPerson] = useState({})
+  const [locations, setLocations] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
+  const [people, setPeople] = useState([]);
+  const [person, setPerson] = useState({});
+  const [error, setError] = useState("");
  
  
-useEffect(()=>{
-  fetch(base_URL + url_edpoint)
-  .then((res) => res.json())
-  .then((res) => {
-    if (url_edpoint === "locations") {
-      setLocations(res)
+  const fetchData = useCallback( async () => {
+    try {
+      const res = await fetch(base_URL + url_edpoint);
+      const data = await res.json();
+      if (url_edpoint === "locations") {
+        setLocations(data)
+      }
+      if (url_edpoint === "people") {
+        setPeople(data)
+      } 
+    } catch (error) {
+      console.log(error);
+      // setError(true);
     }
-    if (url_edpoint === "people") {
-      setPeople(res)
-    } 
-  }).catch(error => {
-      'error'
-  })
-},[url_edpoint])
+  }, [url_edpoint]) 
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData])
 
 
   // Locations
@@ -41,23 +46,26 @@ useEffect(()=>{
 }
 
   // People
-
   function filterPeople(search, people) {
     const result = people.find((person) =>
       person.name.toLowerCase().includes(search.toLowerCase()));
     return result;
-    /// setPerson(result)
   }
 
   function handleSubmit(e) {
     e.preventDefault()
-    console.log(people)
-    const result = filterPeople(searchInput, people); 
-    setPerson(result)
-
-    // console.log(result)
-    //set_url_endpoint("people")
-
+    if(searchInput){
+      const result = filterPeople(searchInput, people);
+      if (result) {
+        setPerson(result)
+      }  else {
+        setPerson("")
+        setError("Not Found")
+      }
+    } else {
+      setPerson("")
+      setError("Not Found")
+    }
   }
 
   function handleSearch(e) {
@@ -66,9 +74,6 @@ useEffect(()=>{
     set_url_endpoint(result)
   }
 
-
-   console.log(person)
-  
   return (
     <div className="app">
       <Router>
@@ -76,8 +81,8 @@ useEffect(()=>{
       <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/movies" element={<Movies/>}/>
-          <Route path="/people" element={<People searchInput={searchInput} person={person} onSearch={handleSearch} handleSubmit={handleSubmit} />} />
-          <Route path="/locations" element={<Locations locations={locations} handleClick={handleShowLocations} />} />
+          <Route path="/people" element={<People searchInput={searchInput} person={person} onSearch={handleSearch} handleSubmit={handleSubmit} error={error} />} />
+          <Route path="/locations" element={<Locations locations={locations} handleClick={handleShowLocations} setLocations={setLocations}/>} />
       </Routes>
       </Router>
     </div>

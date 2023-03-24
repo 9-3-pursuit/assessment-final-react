@@ -7,19 +7,6 @@ const Movies = () => {
     const [movieId, setMovieId] = useState("")
     const [movies, setMovies] = useState([]);
     
-//   function fetchData(){
-//   }
-
-//   useEffect(() => {
-//     fetch(movies_URL)
-//     .then((res) => res.json())
-//     .then((res) => {
-//         setMovies(res)
-//     }).catch((error)=>{
-//     console.log(error)
-//    // setError(true)
-//   })
-// }, [])
 
 const fetchData = async () => {
     try {
@@ -28,7 +15,6 @@ const fetchData = async () => {
         setMovies(data);
     } catch (error) {
         console.log(error);
-        // setError(true);
     }
 }
 
@@ -41,7 +27,7 @@ useEffect(() => {
     }
     
     return (
-        <div className="movies">
+        <main className="movies">
             <h1>Select a Movie</h1>
             <select id="dropdown" onChange={handleSelectChange}>
             <option key="empty option" value="">select movie ...</option>
@@ -52,20 +38,11 @@ useEffect(() => {
                 })}
             </select>
             {movieId ? (<MovieCard id={movieId} url={movies_URL}/>) : null }
-        </div>
+        </main>
     )
 }
 
 export default Movies
 
-//value={movieId} 
-
-// const addSelectedMovie = () => {
-//     for (let element of movies){
-//         if(element.id === movieId){
-//             setMovie(element)
-//         }
-//     }
-//    }
 
 

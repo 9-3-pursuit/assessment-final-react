@@ -1,27 +1,18 @@
-import "./NavBar.css"
-import logo from "./images/png-transparent-ghibli-museum-dog-studio-ghibli-logo-totoro-studio-ghibli-angle-white-mammal.png"
+import logo from "./images/pngwing.com.png"
 
 const NavBar = () => {
     return (
-        <div href="navBar">
-            {/* <img src={logo} alt="logo" /> */}
             <nav>
-                <ul>
-                    <li>
+                  <img src={logo} alt="logo" />
+             
                         <a href="/">Home</a>
-                    </li>
-                    <li>
+                  
                         <a href="/movies">Movies</a>
-                    </li>
-                    <li>
+                 
                         <a href="/people">People</a>
-                    </li>
-                    <li>
+                  
                         <a href="/locations">Locations</a>
-                    </li>
-                </ul>
             </nav>
-        </div>
     )
 }
 
