@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import ShowSelectedMovie from "./ShowSelectedMovie";
+//import "./Movies.css"
 
 export default function Movies() {
     const [movies, setMovies] = useState([]);
     const [selectedMovie, setSelectedMovie] = useState(null);
-    const BASE_URL = "https://resource-ghibli-api-pursuit.onrender.com/films";
+    const BASE_URL = "https://resource-ghibli-api-pursuit.onrender.com";
+
     useEffect(() => {
-        fetch(BASE_URL) 
+        fetch(`${BASE_URL}/films`) 
             .then((res) => res.json())
             .then((movies) => setMovies(movies));
     }, []);

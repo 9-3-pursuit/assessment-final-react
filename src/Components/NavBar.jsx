@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "./favicon.ico";
+import logo from "./Haku:Dragon.jpeg";
 // import "./Nav.css";
 
 export default function NavBar() {
