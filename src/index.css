@@ -58,6 +58,9 @@ li {
   margin-left: 0;
   list-style: none;
 }
+.locations-button {
+  text-align:center;
+}
 
 .locations ul > li > ul li {
   background: ghostwhite;
@@ -81,7 +84,13 @@ li {
 .details li span:first-child {
   font-weight: bold;
 }
+.form{
+  text-align: center;
+}
+.people-search {
 
+  display:inline-block
+}
 .people {
   background: lemonchiffon;
   height: 80vh;
@@ -109,7 +118,10 @@ li {
   height: 80vh;
   background: #d7f0f2;
 }
-
+select {
+  display:block;
+  margin:0 auto;
+}
 .movies aside {
   background: aliceblue;
   width: 90%;
