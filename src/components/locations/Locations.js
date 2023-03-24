@@ -15,7 +15,6 @@ export default function Locations() {
       .then((response) => response.json())
       .then((data) => {
         setLocations(data);
-        
       })
       .catch((error) => console.error(error));
   }, []);
@@ -31,7 +30,6 @@ export default function Locations() {
       return 0;
     }
   });
-  
 
   return (
     <div className="locations">
@@ -44,16 +42,19 @@ export default function Locations() {
           {sortedLocations.map((location) => (
             <li key={location.id}>
               <ul>
-                <span>
                 <li>
-                  <span>
-                    <h3>{location.name}</h3>
-                  </span>
+                  <span>Locations:</span>
+                  <span>{location.name}</span>
                 </li>
-                <li><span>{location.climate}</span></li>
-                </span>
+                <li>
+                  <span>Climate:</span>
+                  <span>{location.climate}</span>
+                </li>
 
-                <li>Terrain: {location.terrain}</li>
+                <li>
+                  <span>Terrain:</span>
+                  <span>{location.terrain}</span>
+                </li>
               </ul>
             </li>
           ))}
