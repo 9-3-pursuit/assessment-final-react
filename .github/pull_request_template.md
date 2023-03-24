@@ -2,7 +2,7 @@
 
 ## Completion 1 -5
 
-My self-assessed completion score is \_\_\_\_
+My self-assessed completion score is4
 
 5: I did everything required and attempted at least one bonus
 
@@ -16,7 +16,7 @@ My self-assessed completion score is \_\_\_\_
 
 ## Comfort 1- 5
 
-My self-assessed comfort score is \_\_\_\_
+My self-assessed comfort score is 3
 
 5: This assignment was a breeze! I want more challenges
 
@@ -31,10 +31,13 @@ My self-assessed comfort score is \_\_\_\_
 ## Wins
 
 Please list any wins:
+getting everything to run after struggling
 
 ## Struggles
 
-Please list any specific struggles
+I made "ghost" folders in the lines of which eventually messed up finding proper paths. once the light bulb went off on what i was doing then things went smoothly
+
+i forgot how add images.. ugh lol
 
 ## Other comments
 
