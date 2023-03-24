@@ -44,7 +44,7 @@ export default function Locations() {
       setSortStatus("unsorted")
     }
     return (
-      <div className="locations flex flex-col items-center">
+      <div className="locations flex flex-col items-center mx-4">
         <span className="text-[30px] font-medium">List of Locations</span>
         <div>
           <button
