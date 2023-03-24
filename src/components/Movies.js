@@ -10,31 +10,31 @@ const Movies = () => {
 //   function fetchData(){
 //   }
 
-  useEffect(() => {
-    fetch(movies_URL)
-    .then((res) => res.json())
-    .then((res) => {
-        setMovies(res)
-    }).catch((error)=>{
-    console.log(error)
-   // setError(true)
-  })
-}, [])
-
-// const fetchData = async () => {
-//     try {
-//         const res = await fetch(movies_URL);
-//         const data = await res.json();
-//         setMovies(data);
-//     } catch (error) {
-//         console.log(error);
-//         // setError(true);
-//     }
-// }
-
-// useEffect(() => {
-//     fetchData();
+//   useEffect(() => {
+//     fetch(movies_URL)
+//     .then((res) => res.json())
+//     .then((res) => {
+//         setMovies(res)
+//     }).catch((error)=>{
+//     console.log(error)
+//    // setError(true)
+//   })
 // }, [])
+
+const fetchData = async () => {
+    try {
+        const res = await fetch(movies_URL);
+        const data = await res.json();
+        setMovies(data);
+    } catch (error) {
+        console.log(error);
+        // setError(true);
+    }
+}
+
+useEffect(() => {
+    fetchData();
+}, [])
     
     const handleSelectChange = (e) => {
         setMovieId(e.target.value)
@@ -44,12 +44,11 @@ const Movies = () => {
         <div className="movies">
             <h1>Select a Movie</h1>
             <select id="dropdown" onChange={handleSelectChange}>
+            <option key="empty option" value="">select movie ...</option>
                 {movies.map((movie) => {
                     return (
-                        <>
-                        <option key="empty option" value=""></option>
                         <option key={movie.id} value={movie.id}>{movie.title}</option>
-                        </>)
+                        )
                 })}
             </select>
             {movieId ? (<MovieCard id={movieId} url={movies_URL}/>) : null }
