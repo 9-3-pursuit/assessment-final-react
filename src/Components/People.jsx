@@ -21,7 +21,7 @@ useEffect(() => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    
+    console.log(cypressPerson)
     
     fetch(`https://resource-ghibli-api-pursuit.onrender.com/people/?name=${selectedPerson}`)
       .then((res) => res.json())
