@@ -2,4 +2,5 @@
   "cypress-watch-and-reload": {
     "watch": "src/*"
   }
+  
 }

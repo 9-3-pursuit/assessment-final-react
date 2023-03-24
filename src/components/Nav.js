@@ -15,8 +15,8 @@ export default function Nav() {
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link fs-3" to="/films">
-              Films
+            <Link className="nav-link fs-3" to="/movies">
+              Movies
             </Link>
           </li>
           <li className="nav-item">
