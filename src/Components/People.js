@@ -1,6 +1,7 @@
 // allow users to search via text form & fetch required data from api (assessmentn prep / forms lab for ref)
 // once searched, should return name, age & eye color
 //figure out how to clear text field upon input
+//figure out how cypress wants api call
 
 import { useState } from "react";
 
