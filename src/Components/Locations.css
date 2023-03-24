@@ -1,0 +1,67 @@
+.locations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(244, 241, 241);
+  border: 2px solid navy;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+
+.locations li {
+  list-style: none;
+}
+
+
+
+.allLocations {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  gap: 40px;
+
+}
+
+.insideli {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+ width: 200px;
+ 
+}
+
+.insideli li {
+  color: navy;
+ 
+}
+
+.insideli .l1 {
+ 
+  background-color: rgb(225, 222, 222);
+  width: 180px;
+  height: 20px;
+  
+ 
+}
+
+.locations h4 {
+ margin: 5px;
+}
+
+.locButton {
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.locButton:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: rgb(207, 230, 237);
+  
+}
+
+.movetoright {
+  margin-left: 150px;
+}
