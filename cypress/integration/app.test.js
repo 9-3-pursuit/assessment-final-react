@@ -1,7 +1,7 @@
-const baseURL = "http://localhost:3000";
 import intercept from "../support/intercept";
 import films from "../fixtures/films.json";
 import locations from "../fixtures/locations.json";
+const baseURL = "http://localhost:3000";
 
 describe("Has a Home Page", () => {
   it("can visit the home page", () => {
@@ -210,7 +210,7 @@ describe("Has 3 buttons that allow sorting by location Name, Climate or Terrain"
       cy.get(".locations ul ul")
         .eq(index)
         .within(() => {
-          cy.get("span").eq(1).should("have.text", locations[index].name);
+          cy.get("span").eq(0).should("have.text", locations[index].name);
         });
     });
   });
@@ -235,7 +235,7 @@ describe("Has 3 buttons that allow sorting by location Name, Climate or Terrain"
             .eq(1)
             .within(() => {
               cy.get("span")
-                .eq(1)
+                .eq(0)
                 .should("have.text", locations[index].climate);
             });
         });
