@@ -1,0 +1,12 @@
+.select {
+    margin-bottom: 40px;
+}
+.card {
+    align-items: center;
+    width: auto;
+    height: max-content;
+    background-color: #517e94;
+    margin: 20px;
+    padding: 20px;
+  }
+  
