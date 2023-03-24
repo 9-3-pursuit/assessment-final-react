@@ -1,10 +1,10 @@
 export default function Location({ location }) {
     return (
-        <li>
+        <li key={location.id}>
             <ul>
-                <li>Name: {location.name}</li>
-                <li>Climate: {location.climate}</li>
-                <li>Terrain: {location.terrain}</li>
+                <li>Name: <span>{location.name}</span></li>
+                <li>Climate: <span>{location.climate}</span></li>
+                <li>Terrain: <span>{location.terrain}</span></li>
             </ul>
         </li>
     )

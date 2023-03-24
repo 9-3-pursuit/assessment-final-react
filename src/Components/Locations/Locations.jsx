@@ -13,6 +13,57 @@ export default function Locations() {
             .then((locationsData) => setLocations(locationsData))
     }, [])
 
+    function sortLocationsByName(locations) {
+        return locations.sort((a, b) => a.name.localeCompare(b.name))
+    }
+
+    function handleSortByName() {
+        fetch(`${BASE_URL}`)
+            .then((response) => response.json())
+            .then((locationsData) => {
+                const locationsSortedByName = sortLocationsByName(locationsData);
+                setLocations(locationsSortedByName);
+            });
+    }
+
+    function sortLocationsByClimate(locations) {
+        return locations.sort((a, b) => a.climate.localeCompare(b.climate))
+    }
+
+    function handleSortByClimate() {
+        fetch(`${BASE_URL}`)
+            .then((response) => response.json())
+            .then((locationsData) => {
+                const locationsSortedByClimate = sortLocationsByClimate(locationsData);
+                setLocations(locationsSortedByClimate);
+            });
+    }
+
+    function sortLocationsByTerrain(locations) {
+        return locations.sort((a, b) => a.terrain.localeCompare(b.terrain))
+    }
+
+    function handleSortByTerrain() {
+        fetch(`${BASE_URL}`)
+            .then((response) => response.json())
+            .then((locationsData) => {
+                const locationsSortedByTerrain = sortLocationsByTerrain(locationsData);
+                setLocations(locationsSortedByTerrain);
+            });
+    }
+
+    function renderLocations() {
+        return (
+            locations.map((location) => {
+                return (
+                    <ul>
+                        <Location location={location} />
+                    </ul>
+                )
+            })
+        )
+    }
+
     return (
         <div className="locations" >
             <h3>List of Locations</h3>
@@ -20,13 +71,18 @@ export default function Locations() {
                 {showLocations ? "Hide Locations" : "Show Locations"}
             </button>
             {showLocations ? (
-                locations.map((location) => {
-                    return (
-                        <ul>
-                            <Location key={location.id} location={location} />
-                        </ul>
-                    )
-                })
+                <button onClick={() => handleSortByName()}>Sort by Name</button>
+            ) : null}
+            {showLocations ? (
+                <button onClick={() => handleSortByClimate()}>
+                    Sort by Climate
+                </button>
+            ) : null}
+            {showLocations ? (
+                <button onClick={() => handleSortByTerrain()}>Sort by Terrain</button>
+            ) : null}
+            {showLocations ? (
+                renderLocations()
             ) : null}
         </div>
     )
