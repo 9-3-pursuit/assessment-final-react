@@ -4,9 +4,8 @@ import MovieCard from "./MovieCard"
 const movies_URL = "https://resource-ghibli-api-pursuit.onrender.com/films"
 
 const Movies = () => {
-    const [movieId, setMovieId] = useState("")
     const [movies, setMovies] = useState([]);
-    
+    const [selectedMovie, setSelectedMovie] = useState("")
 
 const fetchData = async () => {
     try {
@@ -23,7 +22,7 @@ useEffect(() => {
 }, [])
     
     const handleSelectChange = (e) => {
-        setMovieId(e.target.value)
+        setSelectedMovie(movies.find(movie => e.target.value === movie.id ))
     }
     
     return (
@@ -37,7 +36,12 @@ useEffect(() => {
                         )
                 })}
             </select>
-            {movieId ? (<MovieCard id={movieId} url={movies_URL}/>) : null }
+            { selectedMovie ?
+                (<>
+                    <h3><strong>Title: </strong>{selectedMovie.title}</h3>
+                    <p><strong>Release Date: </strong>{selectedMovie.release_date}</p>
+                    <p><strong>Description: </strong>{selectedMovie.description}</p>
+                </>) : null}
         </main>
     )
 }
@@ -45,4 +49,4 @@ useEffect(() => {
 export default Movies
 
 
-
+//<MovieCard id={movieId} url={movies_URL}/>

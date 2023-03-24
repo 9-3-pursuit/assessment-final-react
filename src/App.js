@@ -5,7 +5,7 @@ import Movies from "./components/Movies";
 import People from "./components/People";
 import Locations from "./components/Locations";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 
 const base_URL = "https://resource-ghibli-api-pursuit.onrender.com/"
@@ -18,26 +18,20 @@ function App() {
   const [person, setPerson] = useState({});
   const [error, setError] = useState("");
  
- 
-  const fetchData = useCallback( async () => {
-    try {
-      const res = await fetch(base_URL + url_edpoint);
-      const data = await res.json();
+  useEffect(() => {
+    fetch(base_URL + url_edpoint)
+    .then(res => res.json())
+    .then((data) => {
       if (url_edpoint === "locations") {
         setLocations(data)
       }
       if (url_edpoint === "people") {
         setPeople(data)
-      } 
-    } catch (error) {
+      }
+    }).catch((error) =>{
       console.log(error);
-      // setError(true);
-    }
-  }, [url_edpoint]) 
-
-  useEffect(() => {
-    fetchData();
-  }, [fetchData])
+    })
+  }, [url_edpoint])
 
 
   // Locations
