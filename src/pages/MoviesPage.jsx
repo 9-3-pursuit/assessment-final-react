@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 import MovieCard from "../components/MovieCard";
 
+const baseURL = "https://resource-ghibli-api-pursuit.onrender.com"
+
+
 
 export default function MoviesPage() {
   const [movies, setMovies] = useState([]);
   const [selectedMovieId, setSelectedMovieId] = useState("")
 
   function getMovies() {
-    return fetch("films.json").then((response) => response.json());
+    return fetch(`${baseURL}/films`).then((response) => response.json());
   }
 
   function getSelectedMovieId (e){
@@ -25,19 +28,19 @@ export default function MoviesPage() {
   }, []);
 
   return (
-    <div className="movies">
-      <h2>Select a Movie</h2>
+    <section className="movies">
+      <h1>Select a Movie</h1>
       {/* <select name="movies" id="movie-select"> */}
         <select 
             name="movies"
             id="movie-select"
             onChange={(e) => getSelectedMovieId(e)}
             >
-        <option value=""></option>
+        <option value="movie-title"></option>
         {movies.map((movie) => {
           return (
             <option key={movie.id} value={movie.id}>
-              {movie.id}
+              {movie.title}
             </option>
           );
         })}
@@ -47,6 +50,6 @@ export default function MoviesPage() {
         <MovieCard movieId={selectedMovieId} movies={movies} />
       
       ) : null}
-    </div>
+    </section>
   );
 }

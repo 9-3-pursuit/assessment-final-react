@@ -10,7 +10,7 @@ export default function PeoplePage() {
     const [notFound, setNotFound] = useState(false);
 
     function getPeople() {
-       return fetch("people.json").then(response => response.json())
+       return fetch("https://resource-ghibli-api-pursuit.onrender.com/people").then(response => response.json())
     }
 
     function handleChange(e) {
@@ -53,7 +53,7 @@ export default function PeoplePage() {
         <button onClick={(e) => handleSubmit(e)}>Submit</button>
       </form>
       {selectedPerson ? <PersonCard person={selectedPerson} /> : null}
-      {notFound ? <p>Not found.</p> : null}
+      {notFound ? <p>Not Found.</p> : null}
     </div>
   )
 }
