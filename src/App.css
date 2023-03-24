@@ -1,0 +1,16 @@
+.welcome{
+text-align: center;
+}
+.nav-bar{
+display: flex;
+justify-content: space-evenly, space-between;
+}
+
+nav ul {
+     display: flex;
+     padding: top, left, right, bottom;
+}
+
+li{
+     list-style: none;
+}
