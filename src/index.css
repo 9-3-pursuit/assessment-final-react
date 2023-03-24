@@ -39,27 +39,28 @@ li {
   background: ghostwhite;
   padding: 1em;
   min-height: 80vh;
+  text-align: center;
 }
 
-.locations > ul {
+.locations>ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-left: 0;
 }
 
-.locations ul > li {
+.locations ul>li {
   background: lemonchiffon;
   width: 26%;
   padding: 2em;
 }
 
-.locations ul > li > ul {
+.locations ul>li>ul {
   margin-left: 0;
   list-style: none;
 }
 
-.locations ul > li > ul li {
+.locations ul>li>ul li {
   background: ghostwhite;
   display: flex;
   flex-wrap: no-wrap;
@@ -67,11 +68,16 @@ li {
   justify-content: center;
 }
 
-.locations ul > li > ul li span {
+.locations ul>li>ul li span {
   text-align: center;
   display: inline-block;
   width: 100%;
 }
+
+.locations button {
+  margin: .25%;
+}
+
 .details li {
   list-style: none;
   margin: 0.5em 0;
@@ -86,6 +92,11 @@ li {
   background: lemonchiffon;
   height: 80vh;
   padding-top: 1em;
+  text-align: center;
+}
+
+.people button {
+  margin: 1%;
 }
 
 .people aside {
@@ -99,6 +110,10 @@ li {
   padding-top: 1em;
 }
 
+.people section {
+  margin: 5%;
+}
+
 .people span,
 .movies span {
   font-weight: bold;
@@ -108,6 +123,7 @@ li {
   padding-top: 1em;
   height: 80vh;
   background: #d7f0f2;
+  text-align: center;
 }
 
 .movies aside {
@@ -117,8 +133,17 @@ li {
   padding: 1em;
 }
 
+.movies article {
+  margin: 5%;
+  padding: 5%;
+}
+
 ul li::marker {
   font-size: 150%;
   color: #517e94;
   opacity: 0;
+}
+
+.home {
+  text-align: center;
 }
