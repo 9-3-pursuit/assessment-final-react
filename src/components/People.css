@@ -1,0 +1,10 @@
+.people {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .people-search {
+    margin-bottom: 20px;
+  }
+  
