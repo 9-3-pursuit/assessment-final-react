@@ -42,29 +42,43 @@ function People() {
     setSearch(event.target.value);
   }
   return (
-    <div className="people">
-      <h1>Search for a Person </h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          autoFocus
-          placeholder="Search"
-          value={search}
-          onChange={handleTextChange}
-        />
-        <button>Submit</button>
-      </form>
+    <main className="people">
+      <section>
+        <h2>Search for a Person</h2>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={search}
+            onChange={handleTextChange}
+            autoFocus
+            placeholder="Search..."
+          />
+          <button>Submit</button>
+        </form>
+      </section>
       {findPerson && !error ? (
-        <div>
-          <h2> Name: {findPerson.name}</h2>
-          <h3> Age: {findPerson.age}</h3>
-          <h3> Eye Color: {findPerson.eye_color}</h3>
-          <h3>Hair Color: {findPerson.hair_color}</h3>
-        </div>
+        <aside>
+          <div>
+            <h3>
+              <span>Name:</span> {findPerson.name}
+            </h3>
+            <p>
+              <span>Age:</span> {findPerson.age}
+            </p>
+            <p>
+              <span>Eye Color:</span> {findPerson.eye_color}
+            </p>
+            <p>
+              <span>Hair Color:</span> {findPerson.hair_color}
+            </p>
+          </div>
+        </aside>
       ) : (
-        <p> {error}</p>
+        <section>
+          <p> {error}</p>
+        </section>
       )}
-    </div>
+    </main>
   );
 }
 
