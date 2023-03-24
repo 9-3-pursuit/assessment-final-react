@@ -31,31 +31,39 @@ export default function Locations() {
           </div>
         )}
         <ul>
-          {isShowing &&
-            locationListUnsorted
-              .sort((a, b) => (a[sortCriteria] > b[sortCriteria] ? 1 : -1))
-              .map(({ name, climate, terrain }) => {
-                return (
-                  <li>
-                    <ul>
-                      <li>
-                        <span>Name:</span>
-                        <span>{name}</span>
-                      </li>
-                      <li>
-                        <span>Climate:</span>
-                        <span>{climate}</span>
-                      </li>
-                      <li>
-                        <span>Terrain:</span>
-                        <span>{terrain}</span>
-                      </li>
-                    </ul>
-                  </li>
-                );
-              })}
+          {isShowing && (
+            <SortedLocationSection
+              sortCriteria={sortCriteria}
+              locationListUnsorted={locationListUnsorted}
+            />
+          )}
         </ul>
       </section>
     </main>
   );
 }
+
+const SortedLocationSection = ({ sortCriteria, locationListUnsorted }) => {
+  return locationListUnsorted
+    .sort((a, b) => (a[sortCriteria] > b[sortCriteria] ? 1 : -1))
+    .map(({ name, climate, terrain, id }) => {
+      return (
+        <li key={id}>
+          <ul className="details">
+            <li>
+              <span>Name:</span>
+              <span>{name}</span>
+            </li>
+            <li>
+              <span>Climate:</span>
+              <span>{climate}</span>
+            </li>
+            <li>
+              <span>Terrain:</span>
+              <span>{terrain}</span>
+            </li>
+          </ul>
+        </li>
+      );
+    });
+};
