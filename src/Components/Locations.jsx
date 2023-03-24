@@ -11,14 +11,14 @@ export default function Locations() {
 
 
 
-  //only for cypres to pass
+  //only to please to Cypress, doesnt make sense to run useEffect when no button is clicked
   useEffect(() => {
     fetch("https://resource-ghibli-api-pursuit.onrender.com/locations")
       .then((res) => res.json())
       .then((response) => setLocations2(response));
   }, []);
 
-//only  for cypress
+//only to please to Cypress, doesnt make sense to run useEffect when no button is clicked
 
   const sortBy = (by) => {
    
@@ -38,6 +38,7 @@ export default function Locations() {
 
 
   function handleClick(){
+    console.log(location2)
     setShowLocations(!showLocations);
     if ( showLocations) {
       fetch (`https://resource-ghibli-api-pursuit.onrender.com/locations`)

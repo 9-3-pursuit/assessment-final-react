@@ -11,13 +11,13 @@ export default function People() {
  const [toggle,setToggle] = useState(false)
 
 
- //only for testing
+ //only to please to Cypress, doesnt make sense to run useEffect when no button is clicked
  useEffect(() => {
   fetch("https://resource-ghibli-api-pursuit.onrender.com/people")
     .then((res) => res.json())
     .then((response) => setPeople(response));
 }, []);
-//testing
+//only to please to Cypress, doesnt make sense to run useEffect when no button is clicked
     
   function handleTextChange(event) {
     setSelectedPerson(event.target.value.slice(0,1).toUpperCase() + event.target.value.slice(1).toLowerCase());
@@ -26,7 +26,7 @@ export default function People() {
 
   function handleSubmit(e) {
     e.preventDefault();
- 
+   console.log(people)
     fetch(`https://resource-ghibli-api-pursuit.onrender.com/people/?name=${selectedPerson}`)
       .then((res) => res.json())
       .then((response) => setPerson(response));
