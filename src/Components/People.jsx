@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
-
+import React
+ from "react";
 const BASE_URL = "https://resource-ghibli-api-pursuit.onrender.com/people"
 
 export default function People() {

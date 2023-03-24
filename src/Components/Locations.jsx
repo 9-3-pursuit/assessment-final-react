@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Location from "./Location";
+import React from "react";
 
 const BASE_URL = "https://resource-ghibli-api-pursuit.onrender.com/locations"
 
