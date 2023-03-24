@@ -1,29 +1,19 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import useStudioGhibliAPI from "../../Helpers/useStudioGhibliAPI";
 
 export default function Movies() {
-  const [movies, setMovies] = useState([]);
+  const movies = useStudioGhibliAPI("films");
   const [selectedOption, setSelectedOption] = useState(null);
-  useEffect(() => {
-    fetch("https://resource-ghibli-api-pursuit.onrender.com/films")
-      .then((response) => response.json())
-      .then((result) => {
-        setMovies(result);
-        console.log(result);
-      });
-  }, []);
 
-  const handleMovieChange = (e) => setSelectedOption(e.target.value);
+  const handleMovieSelectChange = (e) => setSelectedOption(e.target.value);
   const selectedMovieDetails =
     selectedOption === "" ? "" : movies.find((m) => m.title === selectedOption);
-  console.log(selectedMovieDetails);
 
   return (
     <main>
       <section className="movies">
-        <h2>
-          <strong>Title:</strong> Select a Movie
-        </h2>
-        <select onChange={handleMovieChange}>
+        <h2>Select a Movie</h2>
+        <select onChange={handleMovieSelectChange}>
           <option value=""></option>
           {movies.map((movie) => {
             const { title, id } = movie;
