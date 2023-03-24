@@ -1,16 +1,23 @@
-import { useState } from "react"; 
+import { useState, useEffect } from "react"; 
 import "./Locations.css"
 
 export default function Locations() { 
   const [showLocations, setShowLocations] =useState(true);
   const [locations, setLocations] =useState([])
   const [description,setViewDescription] = useState("")
- 
+  const [cypressLocation, setCypressLocation] = useState([])
   
     
   
+useEffect(() => {
+  fetch(`https://resource-ghibli-api-pursuit.onrender.com/locations`)   
+  .then((res) => res.json())  
+  .then((response) => setCypressLocation(response)); 
+}, []);
+
   function handleClick(){
     setShowLocations(!showLocations);
+    console.log(cypressLocation)
     if ( showLocations) {
       fetch (`https://resource-ghibli-api-pursuit.onrender.com/locations`)
       .then((res)=> res.json())
