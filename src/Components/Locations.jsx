@@ -9,10 +9,10 @@ export default function Locations() {
   
   function handleClick() {
     setShowLocations(!showLocations);
-    if (showLocations) {
-      fetch (`https://resource-ghibli-api-pursuit.onrender.com/locations`)
-      .then((res)=> res.json())
-      .then((response) => setLocations(response));
+      if (showLocations) {
+        fetch (`https://resource-ghibli-api-pursuit.onrender.com/locations`)
+        .then((res)=> res.json())
+        .then((response) => setLocations(response));
 
       setShowLocations(false)
     } else {
@@ -50,9 +50,9 @@ export default function Locations() {
       <ul className="allLocations">
         {locations.map((location, i) => (
           <ul key={i} className="innerList"> 
-            <li className="list">Name: <span> {location.name}</span></li>
-            <li className="list">Climate: <span>{location.climate}</span></li>
-            <li className="list"> Terrain: {location.terrain}</li>
+            <li className="list"><span> <strong>Name: </strong></span> {location.name}</li>
+            <li className="list"><span><strong>Climate: </strong></span> {location.climate}</li>
+            <li className="list"><span><strong> Terrain: </strong></span> {location.terrain}</li>
           </ul>
         ))}
       </ul>
