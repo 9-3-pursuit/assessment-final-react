@@ -33,7 +33,21 @@ export default function People() {
         console.error(err);
       });
   }
+  function handleTextChange(e) {
+    setSearch(e.target.value);
+    if(searchedName) {
+      setPeople(searchedName);
+    // }else if(searchedName === undefined) {
+    //   console.log("No results found")
+      
+    }
+  }
 
+  // function handleError(people) {
+  //   if (people ) {
+  //     return <h1>No results found</h1>;
+  //   }
+  // }
   return (
     <div className="people">
       <h2>Search for a person</h2>
@@ -44,7 +58,7 @@ export default function People() {
           id="search"
           onChange={(e) => setSearch(e.target.value)}
         />
-        <button type="submit">Search</button>
+        <button type="submit">Submit</button>
       </form>
       {people.length > 0 && (
         <section>
