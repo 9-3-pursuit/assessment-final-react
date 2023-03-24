@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "./Haku:Dragon.jpeg";
-import "./Nav.css";
+import "./NavBar.css";
 
 export default function NavBar() {
     return (
