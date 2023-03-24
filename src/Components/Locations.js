@@ -1,65 +1,59 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getAllLocations } from "../api/fetch";
 
 function Locations() {
-  const [allLocations, setAllLocations] = useState([]);
-  const [showToggle, setShowToggle] = useState(false);
-  const [sortedLocation, setSortedLocation] = useState(false);
+  const [locations, setLocations] = useState([]);
+  const [showLocation, setShowLocation] = useState(false);
 
   useEffect(() => {
     getAllLocations()
-      .then((data) => {
-        setAllLocations(data);
-        console.log(data);
-      })
+      .then(setLocations)
       .catch((error) => {
         console.log(error);
       });
   }, []);
 
-  function toggleLocations() {
-    setShowToggle(!showToggle);
-  }
-
-  function handleSort(type) {
-    const sortedType = allLocations.sort((a, b) => a.localeCompare(b));
-    setSortedLocation(sortedType);
-  }
+  const sortByType = (type) => {
+    const sortedType = [...locations].sort((a, b) => {
+      return a[type].localeCompare(b[type]);
+    });
+    setLocations(sortedType);
+    //   or  setLocations([...locations].sort((a, b) => a[sorter].localeCompare(b[sorter])))
+  };
 
   return (
-    <div className="locations">
-      <h1> List of Locations </h1>
-      <button onClick={toggleLocations}>
-        {" "}
-        {showToggle ? "Hide Locations" : "Show Locations"}{" "}
+    <main className="locations">
+      <h2>List of Locations</h2>
+      <button onClick={() => setShowLocation(!showLocation)}>
+        {showLocation ? "Hide Locations" : "Show Locations"}
       </button>
-      {showToggle ? (
+      {showLocation && (
         <div>
-          {/* <button onClick={handleSort(sortedLocation.name)}>
-            {" "}
-            Sort by Name
-          </button>
-          <button onClick={handleSort(sortedLocation.climate)}>
-            Sort by Climate{" "}
-          </button>
-          <button onClick={handleSort(sortedLocation.terrain)}>
-            Sort by Terrain
-          </button> */}
-
+          <button onClick={() => sortByType("name")}>Sort by Name</button>
+          <button onClick={() => sortByType("climate")}>Sort by Climate</button>
+          <button onClick={() => sortByType("terrain")}>Sort by Terrain</button>
           <ul>
-            {allLocations.map((place) => {
+            {locations.map((location) => {
               return (
-                <ul key={place.id}>
-                  <li> {place.name}</li>
-                  <li>{place.climate}</li>
-                  <li>{place.terrain}</li>
-                </ul>
+                <li key={location.id}>
+                  <ul className="details">
+                    <li>
+                      <span>Name:</span> <span>{location.name}</span>
+                    </li>
+                    <li>
+                      <span>Climate:</span> <span>{location.climate}</span>
+                    </li>
+                    <li>
+                      <span>Terrain:</span> <span>{location.terrain}</span>
+                    </li>
+                  </ul>
+                </li>
               );
             })}
           </ul>
         </div>
-      ) : null}
-    </div>
+      )}
+    </main>
   );
 }
 
