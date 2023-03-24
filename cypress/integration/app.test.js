@@ -1,7 +1,7 @@
-const baseURL = "http://localhost:3000";
 import intercept from "../support/intercept";
 import films from "../fixtures/films.json";
 import locations from "../fixtures/locations.json";
+const baseURL = "http://localhost:3000";
 
 describe("Has a Home Page", () => {
   it("can visit the home page", () => {
