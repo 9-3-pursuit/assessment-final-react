@@ -1,4 +1,4 @@
-import { useState } from "react"; 
+import { useState,useEffect } from "react"; 
 import "./Locations.css"
 
 
@@ -6,8 +6,16 @@ export default function Locations() {
   const [showLocations, setShowLocations] =useState(true);
   const [locations, setLocations] =useState([])
   const [description,setDescription] = useState("")
- 
+  const [sortedBy, setSortBy] = useState([])
+
+  useEffect(() => {
+    fetch (`https://resource-ghibli-api-pursuit.onrender.com/locations`)
+    .then((res)=> res.json())
+    .then((response) => setLocations(response));
+  }, []);
+
   
+
   function handleClick(){
     setShowLocations(!showLocations);
     if ( showLocations) {

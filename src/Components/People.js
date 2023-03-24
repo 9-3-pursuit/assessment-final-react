@@ -2,7 +2,21 @@ import React, { useState, useEffect } from "react";
 export default function People() {
   const [people, setPeople] = useState("");
   const [peopleList, setPeopleList] = useState([]);
+  const [selectPeople, setSelectPeople] = useState("");
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch("https://resource-ghibli-api-pursuit.onrender.com/people")
+      .then((res) => res.json())
+      .then((response) => {
+        setPeopleList(response)
+      });
+        // }).catch((error) => {
+        //   console.log(error)
+        //   setError(error);
+  }, []);
   
+
   function handleTextChange(e) {
     setPeople(e.target.value.slice(0,1).toUpperCase() + e.target.value.slice(1).toLowerCase());
    ;
@@ -15,7 +29,7 @@ export default function People() {
       .then((res) => res.json())
       .then((response) => {
       setPeopleList(response)
-      setPeople("")
+       setPeople([])
       
   })
       
@@ -36,17 +50,17 @@ export default function People() {
       </form>
       
        <div className="people">
-          {peopleList.length === 0 || !peopleList ? "Not Found" : peopleList.map((person) => (
-            <div key={person.id}>
-              <h1>{person.name}</h1>
-              <p><span className="age">Age:</span>{person.age}</p>
-              <p><span className="gender">Gender:</span>{person.gender}</p>
-              <p><span className="eye-color">Eye Color:</span>{person.eye_color}</p>
-              <p><span className="hair-color">Hair Color:</span>{person.hair_color}</p>
-            </div> 
-          ))}
-            
-       </div>
+          {peopleList.length === 0  ? "Not Found" :
+            <div key={peopleList[0].id}>
+              <h1>{peopleList[0].name}</h1>
+              <p><span className="age">Age:</span>{peopleList[0].age}</p>
+              <p><span className="gender">Gender:</span>{peopleList[0].gender}</p>
+              <p><span className="eye-color">Eye Color:</span>{peopleList[0].eye_color}</p>
+              <p><span className="hair-color">Hair Color:</span>{peopleList[0].hair_color}</p>
+            </div>
+          }
+        </div>
     </div>
   );
-}
+};
+
