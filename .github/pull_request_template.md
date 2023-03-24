@@ -31,10 +31,13 @@ My self-assessed comfort score is 3
 ## Wins
 
 Please list any wins:
+getting everything to run after struggling
 
 ## Struggles
 
-Please list any specific struggles
+I made "ghost" folders in the lines of which eventually messed up finding proper paths. once the light bulb went off on what i was doing then things went smoothly
+
+i forgot how add images.. ugh lol
 
 ## Other comments
 

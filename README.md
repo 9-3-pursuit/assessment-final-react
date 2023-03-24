@@ -54,7 +54,7 @@ You will need to complete features for four different pages and create a navigat
 
 #### Home page (`/`) : 1 point
 
-- [ ] Your home page should be accessible via the `/` route and include the following text:
+- [*] Your home page should be accessible via the `/` route and include the following text:
 
   ```
   Welcome to GhibliApp
@@ -64,37 +64,37 @@ You will need to complete features for four different pages and create a navigat
 
 #### Navigation bar : 1 point
 
-- [ ] The navigation bar should be created using the `nav` element.
+- [*] The navigation bar should be created using the `nav` element.
 
 - [ ] The navigation bar should include a logo of your choosing which is 50px wide and 50px high. It should be displayed in the upper-left corner of the page.
 
-- [ ] Clicking on the logo should return the user to the home page.
+- [*] Clicking on the logo should return the user to the home page.
 
-- [ ] The navigation bar should includes links for "Movies", "People", and "Locations". Each link should go to the related route.
+- [*] The navigation bar should includes links for "Movies", "People", and "Locations". Each link should go to the related route.
 
 #### Movies page (`/movies`) select dropdown : 1 point
 
-- [ ] All content should be inside some element with the class `.movies`.
+- [*] All content should be inside some element with the class `.movies`.
 
-- [ ] Has the text "Select a Movie" on the page.
+- [*] Has the text "Select a Movie" on the page.
 
-- [ ] Has a `select` dropdown that includes an "empty" option element followed by all of the films produced by Studio Ghibli.
+- [*] Has a `select` dropdown that includes an "empty" option element followed by all of the films produced by Studio Ghibli.
 
   ![Before Select](./assets/movieSelect1.png)
 
 #### Movies page (`/movies`) get movie details : 1 point
 
-- [ ] When a new option is selected from the dropdown, the movie's title, release date, and description should appear underneath the dropdown. At least the title of the movie should be in some kind of heading.
+- [*] When a new option is selected from the dropdown, the movie's title, release date, and description should appear underneath the dropdown. At least the title of the movie should be in some kind of heading.
 
   ![After Select](./assets/movieSelect2.png)
 
-- [ ] When the "empty" option is selected yet again, the film's information should disappear.
+- [*] When the "empty" option is selected yet again, the film's information should disappear.
 
 #### People page : 1 point
 
-- [ ] All content should be inside of some element with the class `.people`.
+- [*] All content should be inside of some element with the class `.people`.
 
-- [ ] Has the text "Search for a Person" on the page.
+- [*] Has the text "Search for a Person" on the page.
 
 - [ ] Has a form that includes a text input and a submit button. Use a `button` element for the submit button, not an `input` element.
 
@@ -104,29 +104,29 @@ You will need to complete features for four different pages and create a navigat
 
   ![Successful Search](./assets/search2.png)
 
-- [ ] If the search does not yield any results, the text "Not Found" should be displayed.
+- [*] If the search does not yield any results, the text "Not Found" should be displayed.
 
   ![Not found](./assets/search3.png)
 
 #### Locations page : 1 point
 
-- [ ] All content should be inside of some element with the class `.locations`.
+- [*] All content should be inside of some element with the class `.locations`.
 
-- [ ] Has the text "List of Locations" on the page.
+- [*] Has the text "List of Locations" on the page.
 
-- [ ] When arriving on the page, has a button with the text "Show Locations".
+- [*] When arriving on the page, has a button with the text "Show Locations".
 
   ![locations hidden](./assets/locations1.png)
 
-- [ ] When the "Show Locations" button is clicked, the text should be changed to "Hide Locations".
+- [*] When the "Show Locations" button is clicked, the text should be changed to "Hide Locations".
 
-- [ ] When the "Show Locations" button is clicked, all of the locations received from the API should be displayed. Each location should include it's name, climate, and terrain.
+- [*] When the "Show Locations" button is clicked, all of the locations received from the API should be displayed. Each location should include it's name, climate, and terrain.
 
   Use list items to display each of these locations.
 
   ![locations showing](./assets/locations2.png)
 
-- [ ] When the "Hide Locations" button is clicked, all of the locations should be hidden.
+- [*] When the "Hide Locations" button is clicked, all of the locations should be hidden.
 
 **Note**
 
@@ -138,9 +138,9 @@ You will need to complete features for four different pages and create a navigat
 
 ### Sort Locations by name or climate : 1 point
 
-- [ ] Add a button that sorts the locations by name
+- [*] Add a button that sorts the locations by name
 
-- [ ] Add a button that sorts the locations by climate
+- [*] Add a button that sorts the locations by climate
 
 ![locations showing](./assets/locations3.png)
 
@@ -148,9 +148,9 @@ You will need to complete features for four different pages and create a navigat
 
 #### Additional tasks
 
-- [ ] Your application should have no warnings or errors from React.
+- [*] Your application should have no warnings or errors from React.
 
-- [ ] Once you are completed with the above tasks, add styling to the application.
+- [*] Once you are completed with the above tasks, add styling to the application.
 
 ## Learning objectives assessed
 

@@ -9,7 +9,7 @@ export default function Nav() {
             <nav>
                 <article>
                     <a href="http://localhost:3000/">
-                       <img src="/Logo.png" alt="logo" />
+                       <img src="Logo.png" alt="logo" />
                     </a>
                 </article>
                 <ul>
