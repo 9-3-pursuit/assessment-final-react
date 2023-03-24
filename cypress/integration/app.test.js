@@ -114,6 +114,7 @@ describe("Has a functioning People page", () => {
   });
 
   it("can visit the people page", () => {
+    
     cy.contains("Search for a Person");
     cy.get("input[type='text']").should("exist");
   });
