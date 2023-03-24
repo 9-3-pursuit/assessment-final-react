@@ -28,7 +28,7 @@ function Locations() {
         {showLocation ? "Hide Locations" : "Show Locations"}
       </button>
       {showLocation && (
-        <div>
+        <>
           <button onClick={() => sortByType("name")}>Sort by Name</button>
           <button onClick={() => sortByType("climate")}>Sort by Climate</button>
           <button onClick={() => sortByType("terrain")}>Sort by Terrain</button>
@@ -51,7 +51,7 @@ function Locations() {
               );
             })}
           </ul>
-        </div>
+        </>
       )}
     </main>
   );
