@@ -299,5 +299,20 @@
       "https://ghibliapi.herokuapp.com/films/cd3d059c-09f4-4ff3-8d63-bc765a5184fa"
     ],
     "url": "https://ghibliapi.herokuapp.com/locations/b6bac992-a858-4d57-8477-9652d73caaa1"
-  }
+  },
+  {
+    "id": "398e3e1e-9912-4eb6-91fe-a9f8b932b67d",
+    "name": "St. Morwald's Home for Children",
+    "climate": "Mild",
+    "terrain": "City",
+    "surface_water": "",
+    "residents": [
+        "/people/2d66e2eb-5a74-4721-a5b3-c556497bdb66",
+        "/people/835f8c7c-2fc6-4f54-b545-c02ab066cd69"
+    ],
+    "films": [
+        "/films/790e0028-a31c-4626-a694-86b7a8cada40"
+    ],
+    "url": "/locations/398e3e1e-9912-4eb6-91fe-a9f8b932b67d"
+}
 ]

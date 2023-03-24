@@ -1,0 +1,48 @@
+nav{
+    height:50px;
+    background-color: rgb(63, 63, 228) ;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+  
+  }
+  
+  nav ul{
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  gap: 120px;
+  padding-right: 50px;
+  }
+
+
+
+ nav ul li a {
+  font-size:larger;
+    color: white;
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+    text-decoration: none;
+  }
+
+  nav ul li:hover {
+    transform: scale(1.3);
+  }
+
+  nav ul li a:hover {
+    color: rgb(188, 188, 225);
+    border-bottom: 2px solid  var(--black);
+  }
+
+.homneLogo {
+    width: 50px;
+    height: 50px;
+}
+
+ .homeLogo:hover {
+    padding-left: 20px;
+    padding-top: 7px;
+    transform: scale(2.3);
+  }
+
+  

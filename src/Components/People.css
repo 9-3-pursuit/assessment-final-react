@@ -1,0 +1,38 @@
+
+.people {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(244, 241, 241);
+    border: 2px solid navy;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.handletoggle {
+    width: 180px;
+    background-color: white;
+    border-radius: 10px;
+
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 10px;
+    color: navy;
+}
+
+.buttonPeople {
+    width: 80px;
+ margin-left: 5px;
+ padding-left: 5px;
+ padding-right: 5px;
+ border-radius: 5px;
+}
+.buttonPeople:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: rgb(207, 230, 237);
+}
+
+.inputPeople {
+    width: 200px;
+}
