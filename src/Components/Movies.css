@@ -1,0 +1,16 @@
+.movies { 
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    
+    color: blueviolet;
+    background-color: rgb(208, 231, 245) ;
+    border: 2px solid blue;
+    border-radius: 10px ;
+    padding: 12px;
+} 
+
+.description {
+    background-color: aliceblue;
+    padding: 2px;
+}

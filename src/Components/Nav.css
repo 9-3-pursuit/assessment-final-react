@@ -1,0 +1,28 @@
+nav {
+    height:80px;
+    background-color: blueviolet; 
+    display: flex;
+    justify-content: space-between;  
+}
+  
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  gap: 250px;
+}
+
+nav logo {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+nav a {
+  color:aqua;
+}
+
+.artLogo:hover{
+transform: scale(1.7);
+padding-top: 15px;
+padding-left: 10px;
+}

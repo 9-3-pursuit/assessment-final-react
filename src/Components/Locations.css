@@ -1,0 +1,68 @@
+.locations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(175, 219, 247);
+    border: 2px solid navy;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+
+.locations li {
+    list-style: none;
+}
+
+
+
+.viewLocations {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    gap: 40px;
+
+}
+
+.ForInsideLi {
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+   width: 200px;
+   
+}
+
+.ForInsideLi li {
+    color: blueviolet;
+   
+}
+
+.ForInsideLi .l1 {
+   
+    background-color: rgb(82, 209, 255);;
+    width: 180px;
+    height: 20px;
+    
+   
+}
+
+.locations h4 {
+   margin: 5px;
+}
+
+.locationButton {
+    margin: 5px;
+    border-radius: 5px; 
+    color: blueviolet;
+}
+
+.locationButton:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: rgb(207, 230, 237);
+    
+}
+
+.movingtoright {
+    margin-left: 150px;
+}
