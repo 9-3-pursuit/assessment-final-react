@@ -1,29 +1,58 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import MovieCard from "./MovieCard"
 
-const Movies = ({ movies }) => {
-    const [movieId, setMovieId] = useState("")
-   // const [movie, setMovie] = useState({});
+const movies_URL = "https://resource-ghibli-api-pursuit.onrender.com/films"
 
+const Movies = () => {
+    const [movieId, setMovieId] = useState("")
+    const [movies, setMovies] = useState([]);
+    
+//   function fetchData(){
+//   }
+
+  useEffect(() => {
+    fetch(movies_URL)
+    .then((res) => res.json())
+    .then((res) => {
+        setMovies(res)
+    }).catch((error)=>{
+    console.log(error)
+   // setError(true)
+  })
+}, [])
+
+// const fetchData = async () => {
+//     try {
+//         const res = await fetch(movies_URL);
+//         const data = await res.json();
+//         setMovies(data);
+//     } catch (error) {
+//         console.log(error);
+//         // setError(true);
+//     }
+// }
+
+// useEffect(() => {
+//     fetchData();
+// }, [])
+    
     const handleSelectChange = (e) => {
         setMovieId(e.target.value)
     }
-   //console.log(movie)
-
-
+    
     return (
         <div className="movies">
             <h1>Select a Movie</h1>
-            <select id="dropdown" value={movieId} onChange={handleSelectChange}>
+            <select id="dropdown" onChange={handleSelectChange}>
                 {movies.map((movie) => {
                     return (
                         <>
-                        <option key={movie.id} value=""></option>
+                        <option key="empty option" value=""></option>
                         <option key={movie.id} value={movie.id}>{movie.title}</option>
                         </>)
                 })}
             </select>
-            {movieId ? (<MovieCard />) : null }
+            {movieId ? (<MovieCard id={movieId} url={movies_URL}/>) : null }
         </div>
     )
 }
