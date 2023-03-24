@@ -2,7 +2,7 @@ import Nav from "./Components/Nav";
 import Home from "./Components/Home";
 import Movies from "./Components/Movies";
 import People from "./Components/People";
-import Locations from "./Components/Locations";
+import { Locations } from "./Components/Locations";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
