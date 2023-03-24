@@ -13,8 +13,9 @@ nav a {
   color: white;
 }
 
-nav img {
+.nav img {
   height: 50px;
+  width: 50px;
 }
 
 main {
