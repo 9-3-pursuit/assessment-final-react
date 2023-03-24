@@ -4,7 +4,7 @@
 // aka creating dumb components/stateless components
 
 import { useState } from "react";
-import { useGhibliData } from "../../hooks/useGhibliData";
+import useGhibliData from "../../hooks/useGhibliData";
 
 const Film = ({ film }) => {
   return (
