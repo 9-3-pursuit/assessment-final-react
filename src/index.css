@@ -15,6 +15,7 @@ nav a {
 
 nav img {
   height: 50px;
+  width: 50px;
 }
 
 main {
@@ -122,3 +123,4 @@ ul li::marker {
   color: #517e94;
   opacity: 0;
 }
+

@@ -31,7 +31,7 @@ If you have gotten all the tests passing, you are strongly encouraged to work on
 To run the tests, you can run the following command from the command line. You will need to be in the root directory of your local directory.
 
 ```
-npm run cypress
+npm test
 ```
 
 This will open the Cypress testing window, where you can click to run an individual suite of tests or all of the tests at once.
@@ -54,7 +54,7 @@ You will need to complete features for four different pages and create a navigat
 
 #### Home page (`/`) : 1 point
 
-- [ ] Your home page should be accessible via the `/` route and include the following text:
+- [✓ ] Your home page should be accessible via the `/` route and include the following text:
 
   ```
   Welcome to GhibliApp
@@ -64,13 +64,13 @@ You will need to complete features for four different pages and create a navigat
 
 #### Navigation bar : 1 point
 
-- [ ] The navigation bar should be created using the `nav` element.
+- [ ✓] The navigation bar should be created using the `nav` element.
 
-- [ ] The navigation bar should include a logo of your choosing which is 50px wide and 50px high. It should be displayed in the upper-left corner of the page.
+- [✓ ] The navigation bar should include a logo of your choosing which is 50px wide and 50px high. It should be displayed in the upper-left corner of the page.
 
-- [ ] Clicking on the logo should return the user to the home page.
+- [✓ ] Clicking on the logo should return the user to the home page.
 
-- [ ] The navigation bar should includes links for "Movies", "People", and "Locations". Each link should go to the related route.
+- [✓ ] The navigation bar should includes links for "Movies", "People", and "Locations". Each link should go to the related route.
 
 #### Movies page (`/movies`) select dropdown : 1 point
 
@@ -110,23 +110,23 @@ You will need to complete features for four different pages and create a navigat
 
 #### Locations page : 1 point
 
-- [ ] All content should be inside of some element with the class `.locations`.
+- [✓ ] All content should be inside of some element with the class `.locations`.
 
-- [ ] Has the text "List of Locations" on the page.
+- [✓ ] Has the text "List of Locations" on the page.
 
-- [ ] When arriving on the page, has a button with the text "Show Locations".
+- [✓ ] When arriving on the page, has a button with the text "Show Locations".
 
   ![locations hidden](./assets/locations1.png)
 
-- [ ] When the "Show Locations" button is clicked, the text should be changed to "Hide Locations".
+- [ ✓] When the "Show Locations" button is clicked, the text should be changed to "Hide Locations".
 
-- [ ] When the "Show Locations" button is clicked, all of the locations received from the API should be displayed. Each location should include it's name, climate, and terrain.
+- [ ✓] When the "Show Locations" button is clicked, all of the locations received from the API should be displayed. Each location should include it's name, climate, and terrain.
 
   Use list items to display each of these locations.
 
   ![locations showing](./assets/locations2.png)
 
-- [ ] When the "Hide Locations" button is clicked, all of the locations should be hidden.
+- [✓ ] When the "Hide Locations" button is clicked, all of the locations should be hidden.
 
 **Note**
 
@@ -138,9 +138,9 @@ You will need to complete features for four different pages and create a navigat
 
 ### Sort Locations by name or climate : 1 point
 
-- [ ] Add a button that sorts the locations by name
+- [ ✓] Add a button that sorts the locations by name
 
-- [ ] Add a button that sorts the locations by climate
+- [ ✓] Add a button that sorts the locations by climate
 
 ![locations showing](./assets/locations3.png)
 
