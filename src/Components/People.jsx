@@ -62,7 +62,7 @@ export default function People() {
           <h4><span>Gender:</span> {person[0].gender}</h4>
           <h4><span>Eye Color:</span> {person[0].eye_color}</h4>
           <h4><span>Hair Color:</span> {person[0].hair_color}</h4>
-          </>) : (<h4>Not found</h4>)
+          </>) : (<h4>Not Found</h4>)
           )}
         </article>
        
