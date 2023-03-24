@@ -1,3 +1,4 @@
+// form for the person id returned when solo person is searched
 export default function Person({ soloPersonArr }) {
   return (
     <div className="person">

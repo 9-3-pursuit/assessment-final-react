@@ -4,6 +4,7 @@ import Nav from "./Components/Nav"
 import Movies from "./Components/Movies"
 import People from "./Components/People"
 import Locations from "./Components/Locations"
+
 function App() {
   return (
     <div className="app">

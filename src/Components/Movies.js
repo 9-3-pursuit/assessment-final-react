@@ -1,16 +1,20 @@
+// ! URL -> http://localhost:3000/movies
 import React, { useState } from "react";
 
 export default function Movies({ movies }) {
   console.log("test");
-  const [selected, setSelected] = useState("");
+  const [selected, setSelected] = useState(""); // state for slected movie
 
+  // hnadle movie change as it is clicked --v
   function handleMovieChange(event) {
     event.preventDefault();
     setSelected(event.target.value);
   }
 
-//   let filterToTitle = movies.filter((movie) => movie.title === selected);
+// ? attempt to filter through movie titles --v
+   let filterToTitle = movies.filter((movie) => movie.title === selected);
 
+// ? returns the drop down menu but all commented out info is attempts at iterating through the movie data
   return (
     <div className="movies">
       <h1>Select A Movie🍿</h1>
