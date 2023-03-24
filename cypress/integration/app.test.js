@@ -123,6 +123,7 @@ describe("Has a functioning People page", () => {
   });
 
   it("can type in a persons name, search for the person, and show the results", () => {
+    cy.wait(100);
     cy.get(".people input").type("San");
     cy.get(".people button").click();
 
