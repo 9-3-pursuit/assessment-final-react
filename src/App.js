@@ -58,7 +58,6 @@ function sortBy (sorter) {
         <Route path="/" element={<Home/>}/>
         <Route path="/movies" element={<Movies handleSelectChange={handleSelectChange} movies={movies} selected={selected}/>}/>
         <Route path="/people" element={<People people={people}/>}/>
-        {/* <Route path="/people" element={<People people={people} person={person} error={error} handleChande={handleChange} handleSubmit={handleSubmit}/>}/> */}
         <Route path="/locations" element={<Locations locations={locations} showLocations={showLocations} toggleShowLocation={toggleShowLocation} sortBy={sortBy}/>}/>
       </Routes>
       </div>

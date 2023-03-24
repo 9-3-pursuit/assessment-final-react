@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function People ({ people }) {
     const [search, setSearch] = useState("");
     const [person, setPerson] = useState("");
-    const [error, setError] = useState("");
+    const [error, setError] = useState(false);
 
     function handleSubmit (event) {
         event.preventDefault()
