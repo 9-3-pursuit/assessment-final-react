@@ -1,29 +1,26 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import HomePage from './components/Home';
-import NavigationBar from './components/NavBar';
-import MoviesPage from './components/Movies';
-import PeoplePage from './components/People';
-import LocationsPage from './components/Locations';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import HomePage from './components/Home.js';
+import NavigationBar from './components/NavBar.js';
+import MoviesPage from './components/Movies.js';
+import PeoplePage from './components/People.js';
+import LocationsPage from './components/Locations.js';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Router>
-      <NavigationBar />
-        <main>
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route path="/movies" component={MoviesPage} />
-            <Route path="/people" component={PeoplePage} />
-            <Route path="/locations" component={LocationsPage} />
-          </Switch>
-        </main>
-      </Router>
-    </div>
-  );
-}
+      <BrowserRouter>
+        <NavigationBar />
+            <Routes>
+              <Route exact path="/" element={HomePage} />
+              <Route path="/movies" element={MoviesPage} />
+              <Route path="/people" element={PeoplePage} />
+              <Route path="/locations" element={LocationsPage} />
+            </Routes>
+      </BrowserRouter>
+      </div>
+    );
+  }
 
 export default App;
 

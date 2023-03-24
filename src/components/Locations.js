@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import './Locations.css';
+
+const BASE_URL = 'https://ghibliapi.herokuapp.com/locations';
 
 const LocationsPage = () => {
   const [locations, setLocations] = useState([]);
@@ -6,7 +9,7 @@ const LocationsPage = () => {
 
   useEffect(() => {
     const fetchLocations = async () => {
-      const response = await fetch('https://ghibliapi.herokuapp.com/locations');
+      const response = await fetch(`${BASE_URL}`);
       const data = await response.json();
       setLocations(data);
     };

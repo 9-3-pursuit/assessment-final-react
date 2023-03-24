@@ -1,9 +1,10 @@
 import React from 'react';
+import './Home.css';
 
 const HomePage = () => {
   return (
     <div>
-      <h1>Welcome to GhibliApp</h1>
+      <h1>Welcome to Ghibliapp</h1>
     </div>
   );
 }

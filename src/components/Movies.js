@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import './Movies.css';
+
+const BASE_URL = 'https://ghibliapi.herokuapp.com/films';
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
 
   useEffect(() => {
-    fetch('https://ghibliapi.herokuapp.com/films')
+    fetch(`${BASE_URL}`)
       .then((response) => response.json())
       .then((data) => setMovies(data));
   }, []);

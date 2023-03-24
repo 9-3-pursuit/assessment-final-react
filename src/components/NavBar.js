@@ -1,13 +1,12 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from './logo.svg';
-import './NavigationBar.css';
+import './NavBar.css';
+import logo from './Yeti.png';
 
 const NavigationBar = () => {
   return (
     <nav>
+      <img src={logo} alt="Yeti"/>
       <Link to="/">
-        <img src={logo} alt="GhibliApp Logo" className="logo" />
       </Link>
       <ul className="nav-links">
         <li>
@@ -18,6 +17,9 @@ const NavigationBar = () => {
         </li>
         <li>
           <Link to="/locations">Locations</Link>
+        </li>
+        <li>
+          <Link to="/home">Home</Link>
         </li>
       </ul>
     </nav>

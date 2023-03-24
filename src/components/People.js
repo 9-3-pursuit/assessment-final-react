@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import './People.css';
+
+const BASE_URL = 'https://ghibliapi.herokuapp.com/people';
 
 const PeoplePage = () => {
   const [search, setSearch] = useState('');
@@ -8,7 +11,7 @@ const PeoplePage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const response = await fetch(`https://ghibliapi.herokuapp.com/people?name=${search}`);
+    const response = await fetch(`${BASE_URL}?name=${search}`);
     const data = await response.json();
 
     if (data.length > 0) {
