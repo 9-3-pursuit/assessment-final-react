@@ -1,3 +1,10 @@
+* {
+  text-align: center;
+  margin: auto;
+  font-family: 'Ghibli', sans-serif;
+}
+
+
 nav {
   display: flex;
   justify-content: space-around;
@@ -11,6 +18,7 @@ nav a {
   text-decoration: none;
   font-size: 2em;
   color: white;
+  margin-left: 100px;
 }
 
 nav img {
@@ -122,3 +130,15 @@ ul li::marker {
   color: #517e94;
   opacity: 0;
 }
+
+.gif {
+  height: 500px;
+  padding: 50px;
+}
+
+  .gif2 {
+  height: 500px;
+  padding: 50px;
+}
+  
+
