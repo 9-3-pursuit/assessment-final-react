@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import "./People.css"
 
 export default function People() {
@@ -6,7 +6,14 @@ export default function People() {
   const [person, setPerson] = useState([])
   const [selectedPerson, setSelectedPerson] = useState("");
   const [toggleError, setToggleError] =useState(false)
+  const [cypressPerson, setCypressPerson] = useState([])
     
+useEffect(() => {
+ fetch(`https://resource-ghibli-api-pursuit.onrender.com/people`)
+  .then((res) => res.json())  
+  .then((response) => setCypressPerson(response));
+
+}, []);
   function handleTextChange(event) {
     setSelectedPerson(event.target.value.slice(0,1).toUpperCase() + event.target.value.slice(1).toLowerCase());
     console.log(selectedPerson)
@@ -49,7 +56,7 @@ export default function People() {
         <p><span>Gender:</span> {person[0].gender}</p>
         <p><span>Eye Color:</span> {person[0].eye_color}</p>
         <p><span>Hair Color:</span> {person[0].hair_color}</p>
-        </>) : ("Not found")
+        </>) : ("Not Found")
         )}
         </article>
     </div>
