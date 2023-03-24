@@ -1,0 +1,11 @@
+.people {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    
+    color: blueviolet;
+    background-color: rgb(208, 231, 245) ;
+    border: 2px solid blue;
+    padding: 12px; 
+    border-radius: 20px 10px 20px 10px; 
+}
