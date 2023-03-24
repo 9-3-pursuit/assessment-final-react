@@ -38,7 +38,7 @@ export default function People() {
       return (
         <>
           <br />
-          <p>Not found.</p>
+          <p>Not Found</p>
         </>
       );
     }
@@ -64,7 +64,7 @@ export default function People() {
         ) : (
           <form onSubmit={handleSubmit}>
             <label htmlFor="userSearch">
-              <h1>Search For a person</h1>
+              <h1>Search for a Person</h1>
               <input
                 type="text"
                 value={userSearch}
@@ -78,7 +78,7 @@ export default function People() {
         {selectedPerson === null ? (
           <>
             <br />
-            <p>"Not found."</p>
+            <p>Not Found</p>
           </>
         ) : (
           <Person person={selectedPerson} />
