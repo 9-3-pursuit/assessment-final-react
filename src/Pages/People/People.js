@@ -32,10 +32,16 @@ const ResultsSection = ({ selectedOption }) => {
     <p>Not Found</p>
   ) : (
     <aside>
-      <h2>Name: {selectedOption.name}</h2>
-      <h6>Age: {selectedOption.age}</h6>
-      <h6>Gender: {selectedOption.gender}</h6>
-      <h6>Eye Color: {selectedOption.eye_color}</h6>
+      <h3>Name: {selectedOption.name}</h3>
+      <p>
+        <span>Age</span>:{selectedOption.age}
+      </p>
+      <p>
+        <span>Gender</span>: {selectedOption.gender}
+      </p>
+      <p>
+        <span>Eye Color</span>: {selectedOption.eye_color}
+      </p>
     </aside>
   );
 };

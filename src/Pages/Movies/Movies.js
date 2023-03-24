@@ -27,9 +27,9 @@ export default function Movies() {
         {selectedOption && (
           <aside>
             <h2>Title: {selectedMovieDetails.title}</h2>
-            <h6>
+            <p>
               <span>Release Date:</span> {selectedMovieDetails.release_date}
-            </h6>
+            </p>
             <p>
               <span>Description</span>: {selectedMovieDetails.description}
             </p>

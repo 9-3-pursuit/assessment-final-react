@@ -1,3 +1,3 @@
 export default function Home() {
-  return <h1>Welcome to GhibliApp</h1>;
+  return <h2>Welcome to GhibliApp</h2>;
 }
