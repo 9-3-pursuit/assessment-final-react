@@ -25,28 +25,37 @@ function Movies() {
   }
 
   return (
-    <div className="movies">
-      <h1>Select a Movie</h1>
-      <select name="movies" id="movies" onChange={handleSelectChange}>
-        <option value="">--Please choose an option--</option>
-        {allMovies
-          ? allMovies.map((movie) => {
-              return (
-                <option key={movie.id} value={movie.id}>
+    <main className="movies">
+      <section>
+        <h2>Select a Movie</h2>
+        <select name="movies" id="movies" onChange={handleSelectChange}>
+          <option value="">--Please choose an option--</option>
+          {allMovies
+            ? allMovies.map((movie) => (
+                <option key={movie.id} value={movie.title}>
                   {movie.title}
                 </option>
-              );
-            })
-          : null}
-      </select>
+              ))
+            : null}
+        </select>
+      </section>
       {selectMovie ? (
-        <div>
-          <h1> Title : {selectMovie.title}</h1>
-          <h3>Release Date: {selectMovie.release_date}</h3>
-          <p> Description: {selectMovie.description}</p>
-        </div>
+        <aside>
+          <h2>
+            {" "}
+            <span>Title:</span> {selectMovie.title}{" "}
+          </h2>
+          <p>
+            {" "}
+            <span>Release Date:</span> {selectMovie.release_date}{" "}
+          </p>
+          <p>
+            {" "}
+            <span>Description:</span> {selectMovie.description}{" "}
+          </p>
+        </aside>
       ) : null}
-    </div>
+    </main>
   );
 }
 export default Movies;
