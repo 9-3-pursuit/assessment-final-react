@@ -19,6 +19,6 @@ export function getLocations() {
 }
 
 export function getPeople() {
-    return fetch(`${URL}/people`)
+    return fetch(`${URL}/people/`)
         .then((response) => response.json())
 }

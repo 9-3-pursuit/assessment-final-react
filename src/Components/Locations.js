@@ -1,11 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { getLocations } from "../Api/fetch";
+import React from "react";
 
 export default function Locations() {
     const [category, setCategory] = useState("")
     const [listLocations, setListLocations] = useState(true);
     const [locations, setLocations] = useState([])
 
+
+    useEffect(() => {
+        getLocations()
+            .then((response) => {
+                console.log(response)
+                setLocations(response)
+            })
+            .catch(error => console.error(error));
+
+    }, []);
 
     function handleClick() {
         setListLocations(!listLocations);
@@ -63,7 +74,7 @@ export default function Locations() {
         setCategory("terrain")
     }
     return (
-        <div className=".locations">
+        <div className="locations">
             <h1>List of Locations</h1>
             <br></br>
             <button onClick={handleClick}>{listLocations ? ("Show Locations") : ("Hide Locations")}</button>
@@ -72,8 +83,16 @@ export default function Locations() {
                 <button onClick={sortByClimate}>Sort by Climate</button>
                 <button onClick={sortByTerrain}>Sort by Terrain</button>
                 <br></br>
+                <ul>
+                    {locations && locations.map(location => (
+                        <ul key={location.id}>
+                            <li> Name: <span>{location.name} </span></li>
+                            <li> Climate: <span>{location.climate}</span>  </li>
+                            <li> Terrain: {location.terrain} </li>
+                        </ul>
+                    ))}
+                </ul>
 
-                {locations && locations.map(location => (<div key={location.id}> <ul>Name: {location.name}</ul> <ul />  <ul> Climate: {location.climate} </ul>  <ul> Terrain: {location.terrain} </ul> </div>))}
                 {category ? (`Sorted by ${category}`) : null}
             </div>)
                 : null}

@@ -1,22 +1,39 @@
 import React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { getPeople } from "../Api/fetch";
 
 export default function People() {
 
-    const [person, setPerson] = useState([])
+    const [person, setPerson] = useState({})
     const [userSelection, setUserSelection] = useState("");
     const [userClick, setUserClick] = useState(false)
+    const [characters, setCharacters] = useState([])
 
+    useEffect(() => {
+        getPeople()
+            .then((response) => {
+                console.log(response)
+                setCharacters(response)
+                setUserSelection(" ")
+            })
+            .catch(error => setUserClick(false));
+
+
+    }, []);
 
     function handleSubmit(event) {
         event.preventDefault();
 
-        fetch(`https://resource-ghibli-api-pursuit.onrender.com/people/?name=${userSelection}`)
-            .then((response) => response.json())
-            .then((response) => setPerson(response));
-        setUserSelection('')
-        setUserClick(true)
-
+        console.log(userSelection)
+        characters.find((pe) => {
+            if (pe.name === userSelection) {
+                setPerson(pe)
+                setUserClick(true)
+            }
+            return (
+                null
+            )
+        })
     }
 
     function handleTextChange(event) {
@@ -42,14 +59,16 @@ export default function People() {
 
             <article className="handleuserclick">
                 {
-                    !userClick ? (null) : (
+                    !userClick ? ("Not Found") : (
 
                         (person.length !== 0) ? (
                             <div>
-                                <p>Name: {person[0].name}</p>
-                                <p>Age: {person[0].age}</p>
-                                <p>Eye Color: {person[0].eye_color}</p>
-                            </div>) : ("Not found")
+                                <p>Name: {person.name}</p>
+                                <p>Age: {person.age}</p>
+                                <p>Gender: {person.gender}</p>
+                                <p>Eye Color: {person.eye_color}</p>
+                                <p>Hair Color: {person.hair_color}</p>
+                            </div>) : ("Not Found")
                     )}
             </article>
 
