@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import Movies from "./components/Movies";
 import Nav from "./components/Nav";
 import People from "./components/People";
+import Locations from "./components/Locations";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/movies" element={<Movies/>} />
           <Route path="/people" element={<People/>} />
+          <Route path="/locations" element={<Locations/>} />
           </Routes>
     </div>
     </Router>
