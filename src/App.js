@@ -1,11 +1,12 @@
-import Nav from './Components/Common/Nav';
-import Home from './Components/Home/Home';
-import Movies from './Components/Movies/Movies';
-import People from './Components/People/People';
-import Locations from './Components/Locations/Locations';
+import Nav from './Nav';
+import Home from './Home';
+import Movies from './Movies';
+import People from './People';
+import Locations from './Locations';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function App() {
+
+function App(){
   return (
     <div className="app">
       <Router>
@@ -19,6 +20,5 @@ function App() {
       </Router>
     </div>
   );
-}
-
+};
 export default App;

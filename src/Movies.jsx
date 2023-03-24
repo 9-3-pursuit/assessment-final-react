@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import React from 'react';
 
 const BASE_URL = "https://resource-ghibli-api-pursuit.onrender.com/films"
 
@@ -39,4 +40,4 @@ export default function Movies() {
             </article>
         </div>
     )
-}
+};

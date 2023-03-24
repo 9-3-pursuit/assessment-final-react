@@ -5,8 +5,6 @@ export default function Nav() {
 
     return (
         <header>
-           
-
             <nav>
                 <article>
                     <a href="http://localhost:3000/">
