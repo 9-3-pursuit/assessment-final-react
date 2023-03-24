@@ -3,7 +3,7 @@ import { Home, NavBar, Films, People, Locations } from "./components";
 
 const App = () => {
   return (
-    <div className="app">
+    <main className="app">
       <Router>
         <NavBar />
         <Routes>
@@ -12,9 +12,8 @@ const App = () => {
           <Route path="/people" element={<People />} />
           <Route path="/locations" element={<Locations />} />
         </Routes>
-        <h1>Welcome to GhibliApp</h1>
       </Router>
-    </div>
+    </main>
   );
 };
 
