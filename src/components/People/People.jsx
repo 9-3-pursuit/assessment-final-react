@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useGhibliData } from "../../hooks/useGhibliData";
+import useGhibliData from "../../hooks/useGhibliData";
 
 const Person = ({ person }) => {
   return (
