@@ -22,6 +22,36 @@ const Film = ({ film }) => {
   );
 };
 
-const Films = () => {};
+const Films = () => {
+  const films = useGhibliData("films");
+  const [selectedFilm, setSelectedFilm] = useState("");
+
+  const handleFilmSelection = (e) => {
+    const selectedFilmTitle = e.target.value;
+    const foundFilm = films.find((film) => film.title === selectedFilmTitle);
+    setSelectedFilm(foundFilm || "");
+  };
+
+  return (
+    <div className="movies">
+      <h1>Select a Movie</h1>
+      <form>
+        <select id="movies" name="movies" onChange={handleFilmSelection}>
+          <option value="" key="0001">
+            Select movie...
+          </option>
+          {films.map((film) => {
+            return (
+              <option value={film.title} key={film.id}>
+                {film.title}
+              </option>
+            );
+          })}
+        </select>
+      </form>
+      {selectedFilm ? <Film film={selectedFilm} /> : null}
+    </div>
+  );
+};
 
 export default Films;
