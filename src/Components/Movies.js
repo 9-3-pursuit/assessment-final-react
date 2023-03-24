@@ -31,11 +31,13 @@ function Movies() {
         <select name="movies" id="movies" onChange={handleSelectChange}>
           <option value="">--Please choose an option--</option>
           {allMovies
-            ? allMovies.map((movie) => (
-                <option key={movie.id} value={movie.title}>
-                  {movie.title}
-                </option>
-              ))
+            ? allMovies.map((movie) => {
+                return (
+                  <option key={movie.id} value={movie.id}>
+                    {movie.title}
+                  </option>
+                );
+              })
             : null}
         </select>
       </section>
