@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 function Movies() {
   const [allMovies, setAllMovies] = useState([]);
   const [error, setError] = useState("");
-  const [selectMovie, setSelectMovie] = useState("")
+  const [selectMovie, setSelectMovie] = useState("");
+
   useEffect(() => {
     getAllMovies()
       .then((data) => {
@@ -17,18 +18,26 @@ function Movies() {
   }, []);
 
   function handleSelectChange(event) {
-    console.log("hi");
+    setSelectMovie(event.target.value);
+    setError("Not Found");
   }
+
   return (
     <div className="movies">
       <h1>Select a Movie</h1>
       <select name="movies" id="movies" onChange={handleSelectChange}>
         <option value="">---Please choose an option---</option>
-        {allMovies.map((movie) => {
-          <option key={movie.id} value={movie.title}>
-            {movie.title}
-          </option>;
-        })}
+        {error ? (
+          allMovies.map((movie) => {
+            <option key={movie.id} value={movie.title}>
+              {movie.title}
+            </option>;
+          })
+        ) : (
+          <div>
+            <p> {error} </p>{" "}
+          </div>
+        )}
       </select>
     </div>
   );
