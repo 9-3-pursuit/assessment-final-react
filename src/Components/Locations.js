@@ -51,7 +51,7 @@ export default function Locations() {
             onClick={toggleShowLocations}
             className="border rounded-[3px] border-gray-400 text-[10px] p-1 px-4 font-bold hover:outline outline-1 outline-[turquoise]"
           >
-            {showLocations ? "HIDE LOCATIONS" : "SHOW LOCATIONS"}
+            {showLocations ? "Hide Locations" : "Show Locations"}
           </button>
           {showLocations && (
             <>
@@ -59,19 +59,19 @@ export default function Locations() {
                 onClick={() => sortLocations("name")}
                 className="border rounded-[3px] border-gray-400 text-[10px] p-1 px-4 font-bold hover:outline outline-1 outline-[turquoise] "
               >
-                SORT BY NAME
+                Sort by Name
               </button>
               <button
                 onClick={() => sortLocations("climate")}
                 className="border rounded-[3px] border-gray-400 text-[10px] p-1 px-4 font-bold hover:outline outline-1 outline-[turquoise] "
               >
-                SORT BY CLIMATE
+                Sort by Climate
               </button>
               <button
                 onClick={() => sortLocations("terrain")}
                 className="border rounded-[3px] border-gray-400 text-[10px] p-1 px-4 font-bold hover:outline outline-1 outline-[turquoise] "
               >
-                SORT BY TERRAIN
+                Sort by Terrain
               </button>
             </>
           )}
@@ -86,11 +86,11 @@ export default function Locations() {
                       Name: <span className="ml-[20%]">{location.name}</span>
                     </li>
                     <li>
-                      Climate:{" "}
+                      Climate:
                       <span className="ml-[20%]">{location.climate}</span>
                     </li>
                     <li>
-                      Terrain:{" "}
+                      Terrain:
                       <span className="ml-[20%]">{location.terrain}</span>
                     </li>
                   </ul>

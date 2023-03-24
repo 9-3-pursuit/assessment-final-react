@@ -210,7 +210,7 @@ describe("Has 3 buttons that allow sorting by location Name, Climate or Terrain"
       cy.get(".locations ul ul")
         .eq(index)
         .within(() => {
-          cy.get("span").eq(1).should("have.text", locations[index].name);
+          cy.get("span").eq(0).should("have.text", locations[index].name);
         });
     });
   });
@@ -235,7 +235,7 @@ describe("Has 3 buttons that allow sorting by location Name, Climate or Terrain"
             .eq(1)
             .within(() => {
               cy.get("span")
-                .eq(1)
+                .eq(0)
                 .should("have.text", locations[index].climate);
             });
         });
