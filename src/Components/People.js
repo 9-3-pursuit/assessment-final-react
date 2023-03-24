@@ -14,13 +14,10 @@ export default function People() {
         fetch(`https://resource-ghibli-api-pursuit.onrender.com/people/?name=${userSelection}`)
             .then((response) => response.json())
             .then((response) => setPerson(response));
-
         setUserSelection('')
-
         setUserClick(true)
 
     }
-
 
     function handleTextChange(event) {
         setUserSelection(event.target.value.slice(0, 1)

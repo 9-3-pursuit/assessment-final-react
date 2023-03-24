@@ -73,7 +73,7 @@ export default function Locations() {
                 <button onClick={sortByTerrain}>Sort by Terrain</button>
                 <br></br>
 
-                {locations.map(location => (<div key={location.id}> <ul>Name: {location.name}</ul> <ul />  <ul> Climate: {location.climate} </ul>  <ul> Terrain: {location.terrain} </ul> </div>))}
+                {locations && locations.map(location => (<div key={location.id}> <ul>Name: {location.name}</ul> <ul />  <ul> Climate: {location.climate} </ul>  <ul> Terrain: {location.terrain} </ul> </div>))}
                 {category ? (`Sorted by ${category}`) : null}
             </div>)
                 : null}
