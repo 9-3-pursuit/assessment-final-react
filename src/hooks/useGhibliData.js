@@ -5,7 +5,7 @@
 import { useState, useEffect } from "react";
 import { fetchGhibliData } from "../utils/fetchData";
 
-export const useGhibliData = (endpoint) => {
+const useGhibliData = (endpoint) => {
   const [ghibliData, setGhibliData] = useState([]);
 
   useEffect(() => {
@@ -14,3 +14,5 @@ export const useGhibliData = (endpoint) => {
 
   return ghibliData;
 };
+
+export default useGhibliData;
