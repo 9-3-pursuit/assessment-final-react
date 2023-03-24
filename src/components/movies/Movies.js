@@ -30,7 +30,7 @@ export default function Films() {
   }, []);
 
   return (
-    <div>
+    <div className="movies">
       {error ? (
         <ErrorMessage />
       ) : (

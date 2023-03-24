@@ -3,6 +3,7 @@ import intercept from "../support/intercept";
 import films from "../fixtures/films.json";
 import locations from "../fixtures/locations.json";
 
+
 describe("Has a Home Page", () => {
   it("can visit the home page", () => {
     cy.visit(baseURL);
