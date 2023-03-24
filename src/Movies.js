@@ -11,9 +11,10 @@ export default function Movies(){
         const found = data.find((films) => films.id === chosen);
         setFilm(found || {});
     }
+    const baseURL = `https://resource-ghibli-api-pursuit.onrender.com/films`;
 
     useEffect(() => {
-        fetch("./films.json")
+        fetch(baseURL)
         .then((res) => res.json())
         .then((data) => {
         

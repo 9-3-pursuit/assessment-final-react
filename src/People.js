@@ -13,10 +13,10 @@ export default function People(){
         setName('')
     
     }
-
+    const newURL = `https://resource-ghibli-api-pursuit.onrender.com/people/?name=${input}`;
 
     useEffect(() => {
-        fetch("./people.json")
+        fetch(newURL)
         .then((res) => res.json())
         .then((info) => {
         
@@ -31,7 +31,7 @@ export default function People(){
             <h1>Search for a Person</h1>
             <form className="pplForm"onSubmit={handleSubmit}>
                 <label htmlFor="name">
-                    <input value={name} onChange={(e) => {
+                    <input value={name} placeholder="Search..." onChange={(e) => {
                         setName(e.target.value)
                     }}
                         type="text"
@@ -40,14 +40,16 @@ export default function People(){
                 <button type='submit'>Submit</button>
             </form>
             <aside>
-            {input.id && (
+            {input.id ? (
                 <div>
                     <h2>Name: {input.name}</h2>
                     <p><strong>Age: </strong>{input.age ? input.age : "N/A"}</p>
-                    <p><strong>Eye Color: </strong>{input.eye_color ? input.eye_color : "N/A"}</p>
-                    <p><strong>Eye Color: </strong>{input.hair_color ? input.hair_color : "N/A"}</p>
+                    <p><strong>Eye color: </strong>{input.eye_color ? input.eye_color : "N/A"}</p>
+                    <p><strong>Eye color: </strong>{input.hair_color ? input.hair_color : "N/A"}</p>
                     <p><strong>Gender: </strong>{input.gender ? input.gender : "N/A"}</p>
                 </div>
+                ) : (
+                    <p>Not Found</p>
             )}
             </aside>        
         </div>

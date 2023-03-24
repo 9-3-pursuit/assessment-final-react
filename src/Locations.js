@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from "react"
-
 export default function Locations(){
-
     const [detail, setDetail] = useState([]);
     const [show, setShow] = useState(false);
 
@@ -36,18 +34,18 @@ export default function Locations(){
             })
         )
     };
-
-    useEffect(() => {
-fetch("./locations.json")
-        
+    
+const URL2 = `https://resource-ghibli-api-pursuit.onrender.com/locations`;
+useEffect(() => {
+fetch(URL2)
           .then((res) => res.json())
           .then((detail) => {
-            
-            setDetail(detail);
+           
+
+ setDetail(detail);
           })
           .catch((err) => console.log(err));
       }, []);
-
     return (
         <div className="locations">
             <h1>List of Locations</h1>
@@ -67,15 +65,14 @@ fetch("./locations.json")
                 Sort By Terrain
                 </button>
             ) : null}
-            
-            
+
             <ul>
                 {show && detail && detail.map((item) => (
                     <li key={item.id}>
                         <ul>
-                        <li><strong>Name: </strong>{item.name}</li>
-                            <li><strong>Climate: </strong>{item.climate}</li>
-                            <li><strong>Terrain: </strong> {item.terrain}</li>
+                            <li><strong>name: </strong>{item.name}</li>
+                            <li><strong>climate: </strong>{item.climate}</li>
+                            <li><strong>terrain: </strong> {item.terrain}</li>
                         </ul>
                     </li>
                 )) }

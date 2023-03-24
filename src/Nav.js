@@ -9,9 +9,9 @@ export default function Nav(){
                 </Link>    
 
                 <Link to="/">Home</Link>
-                <Link to="/Movies">Movies</Link>
-                <Link to="/People">People</Link>
-                <Link to="/Locations">Locations</Link>
+                <Link to="/movies">Movies</Link>
+                <Link to="/people">People</Link>
+                <Link to="/locations">Locations</Link>
             </nav>
         </div>
     )
