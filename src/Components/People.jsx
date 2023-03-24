@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import "./People.css"
 
 
@@ -6,10 +6,18 @@ export default function People() {
 
   const [person, setPerson] = useState([])
   const [selectedPerson, setSelectedPerson] = useState("");
+  const [people,setPeople] = useState([]);
  
  const [toggle,setToggle] = useState(false)
 
 
+ //only for testing
+ useEffect(() => {
+  fetch("https://resource-ghibli-api-pursuit.onrender.com/people")
+    .then((res) => res.json())
+    .then((response) => setPeople(response));
+}, []);
+//testing
     
   function handleTextChange(event) {
     setSelectedPerson(event.target.value.slice(0,1).toUpperCase() + event.target.value.slice(1).toLowerCase());

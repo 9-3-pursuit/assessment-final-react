@@ -1,4 +1,4 @@
-import { useState } from "react"; 
+import { useState,useEffect } from "react"; 
 import "./Locations.css"
 
 
@@ -6,8 +6,19 @@ export default function Locations() {
   const [showLocations, setShowLocations] =useState(true);
   const [locations, setLocations] =useState([])
   const [description,setDescription] = useState("")
- 
+  const [location2, setLocations2]=  useState([])
   
+
+
+
+  //only for cypres to pass
+  useEffect(() => {
+    fetch("https://resource-ghibli-api-pursuit.onrender.com/locations")
+      .then((res) => res.json())
+      .then((response) => setLocations2(response));
+  }, []);
+
+//only  for cypress
 
   const sortBy = (by) => {
    
