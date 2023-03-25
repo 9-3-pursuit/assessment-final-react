@@ -5,7 +5,7 @@ export default function MovieCard({ movieId, movies }) {
   return (
     <aside className="movieCard">
       <h2>Title: {movie.title}</h2>
-      <p>Release date: {movie["release_date"]}</p>
+      <p>Release date: {movie.release_date}</p>
       <p>Description: {movie.description}</p>
     </aside>
   )

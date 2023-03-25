@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { useState } from 'react'
 import PersonCard from '../components/PersonCard';
 
+const baseURL = "https://resource-ghibli-api-pursuit.onrender.com"
+
 export default function PeoplePage() {
 
     const [search, setSearch] = useState("");
@@ -10,7 +12,7 @@ export default function PeoplePage() {
     const [notFound, setNotFound] = useState(false);
 
     function getPeople() {
-       return fetch("https://resource-ghibli-api-pursuit.onrender.com/people").then(response => response.json())
+       return fetch(`${baseURL}/people`).then(response => response.json())
     }
 
     function handleChange(e) {
@@ -30,7 +32,7 @@ export default function PeoplePage() {
     }
 
     function handleSubmit(e) {
-        // get selected person
+        
         e.preventDefault();
         setSelectedPerson(getSelectedPerson())
         setSearch("");
@@ -46,7 +48,7 @@ export default function PeoplePage() {
     }, [])
 
   return (
-    <div className='people'>
+    <section className='people'>
         <h2>Search for a Person</h2>
       <form>
         <input type="text" value={search} onChange={(e) => handleChange(e)} />
@@ -54,6 +56,7 @@ export default function PeoplePage() {
       </form>
       {selectedPerson ? <PersonCard person={selectedPerson} /> : null}
       {notFound ? <p>Not Found.</p> : null}
-    </div>
+      
+    </section>
   )
 }

@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react';
 
 export default function PersonCard({ person }) {
   return (
-    <div className='personCard'>
-      <h2>Name: {person.name}</h2>
-      <p>Age: {person.age}</p>
-      <p>Eye color: {person["eye_color"]}</p>
-      <p>Hair color: {person["hair_color"]}</p>
-    </div>
+    <aside className='personCard'>
+      <h3>Name: {person.name}</h3>
+      <p><span>Age:</span> <span>{person.age}</span></p>
+      <p><span>Eye color:</span><span>{person["eye_color"]}</span></p>
+      <p><span>Hair color:</span> <span>{person["hair_color"]}</span></p>
+    </aside>
   )
 }

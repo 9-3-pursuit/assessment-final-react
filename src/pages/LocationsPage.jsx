@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import LocationCard from "../components/LocationCard";
+// import LocationCard from "../components/LocationCard";
 
 const baseURL = "https://resource-ghibli-api-pursuit.onrender.com"
 
@@ -7,7 +7,7 @@ export default function LocationsPage() {
     const [clicked, setClicked] = useState(false);
     const [locations, setLocations] = useState([]);
 
-    function handleClick() {
+    function handleClick(e) {
         setClicked(!clicked)
     }
 
@@ -18,8 +18,8 @@ export default function LocationsPage() {
     function handleSortByName() {
         const locationsCopy = [...locations];
         locationsCopy.sort((locationA, locationB) => {
-            if (locationA.name > locationB.name) return 1
-            if (locationA.name < locationB.name) return -1
+            if (locationA.name.toLowerCase() > locationB.name.toLowerCase()) return 1
+            if (locationA.name.toLowerCase() < locationB.name.toLowerCase()) return -1
             return 0
         })
         setLocations(locationsCopy);
@@ -61,14 +61,27 @@ export default function LocationsPage() {
             <button onClick={ handleClick }>
                 {clicked ? "Hide Locations" : "Show Locations"}
             </button>
-            <button onClick={handleSortByName}>Sort by Name</button>
-            <button onClick={handleSortByClimate}>Sort by Climate</button>
-            <button onClick={handleSortByTerrain}>Sort by Terrain</button>
 
-            <ul className="details">
-                {clicked ? locations.map((location, i) => {
+            {clicked ? 
+            <>
+            <button type="button" onClick={handleSortByName}>Sort by Name</button>
+            <button type="button" onClick={handleSortByClimate}>Sort by Climate</button>
+            <button  type="button" onClick={handleSortByTerrain}>Sort by Terrain</button>
+            </>
+            : null
+                
+            }
+            
+
+            <ul className="locations">
+                {clicked ? locations.map((location) => {
                     return(
-                        <li key={location.id}><LocationCard location={location} /></li>
+                        <ul className="details" key={location.id}>
+                            <li><span>Name:</span><span>{location.name}</span></li>
+                            <li><span>Climate:</span><span>{location.climate}</span></li>
+                             <li><span>Terrain:</span><span>{location.terrain}</span></li>
+                        {/* <li key={location.id}><LocationCard location={location} /></li> */}
+                        </ul>
                 )}) : null}
             </ul>
         </div>
